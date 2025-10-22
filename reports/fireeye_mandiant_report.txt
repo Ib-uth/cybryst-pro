@@ -1,0 +1,363 @@
+MANDIANT THREAT INTELLIGENCE
+ADVANCED THREAT ANALYSIS REPORT
+===============================
+
+THREAT ACTOR: FIN7 (Carbanak)
+CAMPAIGN: Point of Sale (POS) Malware Campaign
+DATE: June 15, 2024
+THREAT LEVEL: CRITICAL
+
+EXECUTIVE SUMMARY
+Mandiant has identified a sophisticated financial crime campaign targeting retail and hospitality organizations. The threat actor, tracked as FIN7, has evolved their tactics to include advanced evasion techniques and multi-stage payload delivery mechanisms specifically designed for point-of-sale systems.
+
+CAMPAIGN OVERVIEW
+
+TARGETING METHODOLOGY
+Primary Targets:
+- Restaurant chains (fast food and casual dining)
+- Retail stores (clothing, electronics, home goods)
+- Hotels and hospitality services
+- Gas stations and convenience stores
+
+Attack Vectors:
+1. Supply Chain Compromise
+   - Compromising POS system vendors
+   - Malicious software updates
+   - Backdoored installation packages
+
+2. Social Engineering
+   - Phishing emails targeting IT staff
+   - Fake support calls
+   - Malicious USB drops
+
+3. Physical Access
+   - Compromising wireless networks
+   - Physical device tampering
+   - Insider threats
+
+MALWARE ANALYSIS
+
+CARBANAK VARIANT ANALYSIS
+Primary Payload:
+- File Name: pos_update.exe
+- SHA256: 9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6
+- MD5: 6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2
+- File Size: 3,456,789 bytes
+- Compilation Date: 2024-06-01 15:30:22 UTC
+
+Persistence Mechanisms:
+- Registry Run Key: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\POSUpdate
+- Scheduled Task: "SystemMaintenance"
+- Service Installation: "WindowsUpdateService"
+- DLL Hijacking: msvcp140.dll
+
+MEMORY INJECTION TECHNIQUES
+Process Hollowing:
+- Target Process: explorer.exe
+- Injection Method: Process Hollowing
+- Payload Location: 0x00400000
+
+DLL Injection:
+- Target Processes: svchost.exe, winlogon.exe
+- Injection Method: CreateRemoteThread
+- DLL Name: pos_monitor.dll
+
+Process Doppelgänging:
+- Target Process: notepad.exe
+- Transaction Method: CreateTransaction
+- Rollback Technique: RollbackTransaction
+
+NETWORK COMMUNICATION
+
+COMMAND AND CONTROL INFRASTRUCTURE
+Primary C2 Servers:
+- IP Address: 45.146.164.110 (Bulgaria)
+- Port: 443 (HTTPS)
+- Domain: secure-pos-update.com
+- SSL Certificate: Let's Encrypt (Issued: 2024-05-15)
+
+Secondary C2 Servers:
+- IP Address: 185.220.101.42 (Germany)
+- Port: 8080 (HTTP)
+- Domain: pos-monitoring.net
+- Backup Domain: pos-backup.org
+
+Communication Protocol:
+- HTTP/HTTPS POST requests
+- JSON-encoded payloads
+- AES-256 encryption
+- Base64 encoding
+
+Data Exfiltration:
+- Credit card data (Track 1 and Track 2)
+- Customer personal information
+- Transaction logs
+- System configuration data
+
+PAYLOAD DELIVERY MECHANISMS
+
+MULTI-STAGE DROPPER
+Stage 1 - Dropper:
+- File: invoice_2024.pdf.exe
+- SHA256: 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2
+- Function: Download and execute next stage
+
+Stage 2 - Loader:
+- File: system_update.dll
+- SHA256: 8a9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3
+- Function: Decrypt and load main payload
+
+Stage 3 - Main Payload:
+- File: pos_monitor.exe
+- SHA256: 9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4
+- Function: Memory scraping and data exfiltration
+
+ADVANCED EVASION TECHNIQUES
+
+ANTI-ANALYSIS FEATURES
+Virtual Machine Detection:
+- Check for VMWare registry keys
+- Detect VirtualBox processes
+- Identify sandbox environments
+- CPU instruction timing analysis
+
+Debugger Detection:
+- IsDebuggerPresent API calls
+- Hardware breakpoint detection
+- Timing-based analysis
+- Exception handling checks
+
+Sandbox Evasion:
+- Sleep loops (5-10 minutes)
+- User interaction requirements
+- File system activity simulation
+- Network connectivity checks
+
+PROCESS INJECTION METHODS
+Atom Bombing:
+- Using Windows Atom Tables
+- Global atom name: "POS_SYSTEM_UPDATE"
+- Injection target: explorer.exe
+
+Process Doppelgänging:
+- Transaction-based injection
+- Using NTFS transactions
+- Rollback after injection
+
+Hollow Process Injection:
+- Target: svchost.exe
+- Method: Process Hollowing
+- Payload: pos_monitor.dll
+
+CREDIT CARD DATA EXTRACTION
+
+MEMORY SCRAPING TECHNIQUES
+Process Targeting:
+- Target Process: pos_terminal.exe
+- Memory Region: Heap allocation
+- Data Pattern: Credit card track data
+- Extraction Method: Regular expression matching
+
+Regex Patterns:
+- Track 1: ^%B[0-9]{13,19}\^[A-Z]{2,26}/[A-Z]{2,26}\^[0-9]{4}
+- Track 2: ^;[0-9]{13,19}=[0-9]{4}
+- CVV: [0-9]{3,4}
+- Expiration: [0-9]{2}/[0-9]{2}
+
+DATA ENCRYPTION AND EXFILTRATION
+Encryption Method:
+- Algorithm: AES-256-CBC
+- Key Derivation: PBKDF2
+- IV Generation: Random 16 bytes
+- Padding: PKCS7
+
+Exfiltration Channels:
+- HTTPS POST to C2 server
+- Email attachment to dropbox
+- FTP upload to compromised server
+- DNS tunneling for small data
+
+LATERAL MOVEMENT TECHNIQUES
+
+NETWORK DISCOVERY
+Network Scanning:
+- ARP table enumeration
+- Port scanning (TCP 445, 3389, 22)
+- Service enumeration
+- Share discovery
+
+Tools Used:
+- Nmap for network discovery
+- Netcat for port scanning
+- PsExec for remote execution
+- WMI for system enumeration
+
+CREDENTIAL HARVESTING
+Methods:
+- LSASS memory dumping
+- Credential manager access
+- Browser password extraction
+- Keylogger installation
+
+Harvested Credentials:
+- Domain administrator accounts
+- Local administrator accounts
+- Service account passwords
+- Database credentials
+
+INDICATORS OF COMPROMISE (IOCs)
+
+FILE HASHES
+Malicious Files:
+- pos_update.exe: SHA256: 9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6
+- system_update.dll: SHA256: 8a9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3
+- pos_monitor.dll: SHA256: 7b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4
+
+Dropped Files:
+- %TEMP%\pos_data.bin
+- %APPDATA%\Microsoft\Windows\Themes\wallpaper.dll
+- %PROGRAMDATA%\Windows\System32\drivers\update.sys
+
+REGISTRY KEYS
+Persistence Keys:
+- HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\POSUpdate
+- HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell
+- HKEY_CURRENT_USER\Software\Classes\CLSID\{87654321-4321-4321-4321-210987654321}
+
+Configuration Keys:
+- HKEY_CURRENT_USER\Software\POSMonitor\Config
+- HKEY_LOCAL_MACHINE\SOFTWARE\POSMonitor\Settings
+
+NETWORK INDICATORS
+IP Addresses:
+- 45.146.164.110 (Primary C2)
+- 185.220.101.42 (Secondary C2)
+- 91.92.240.118 (Backup C2)
+- 203.0.113.45 (Exfiltration server)
+
+Domain Names:
+- secure-pos-update.com
+- pos-monitoring.net
+- pos-backup.org
+- update-system.trusted-site.com
+
+User-Agent Strings:
+- Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+- Microsoft Office/16.0 (Microsoft Outlook 16.0.14326.20404; Pro)
+
+MITRE ATT&CK MAPPING
+
+INITIAL ACCESS
+- T1566.001 - Phishing: Spearphishing Attachment
+- T1190 - Exploit Public-Facing Application
+- T1078.003 - Valid Accounts: Local Accounts
+
+EXECUTION
+- T1059.001 - Command and Scripting Interpreter: PowerShell
+- T1204.002 - User Execution: Malicious File
+- T1055 - Process Injection
+
+PERSISTENCE
+- T1543.003 - Create or Modify System Process: Windows Service
+- T1053.005 - Scheduled Task/Job: Scheduled Task
+- T1547.001 - Boot or Logon Autostart Execution: Registry Run Keys
+
+PRIVILEGE ESCALATION
+- T1548.002 - Abuse Elevation Control Mechanism: Bypass User Account Control
+- T1078.003 - Valid Accounts: Local Accounts
+
+DEFENSE EVASION
+- T1562.001 - Impair Defenses: Disable or Modify Tools
+- T1027 - Obfuscated Files or Information
+- T1055 - Process Injection
+
+CREDENTIAL ACCESS
+- T1003.001 - OS Credential Dumping: LSASS Memory
+- T1552.001 - Unsecured Credentials: Credentials in Files
+
+DISCOVERY
+- T1083 - File and Directory Discovery
+- T1082 - System Information Discovery
+- T1018 - Remote System Discovery
+
+LATERAL MOVEMENT
+- T1021.001 - Remote Services: Remote Desktop Protocol
+- T1021.002 - Remote Services: SMB/Windows Admin Shares
+- T1078.003 - Valid Accounts: Local Accounts
+
+COLLECTION
+- T1005 - Data from Local System
+- T1039 - Data from Network Shared Drive
+- T1056.001 - Input Capture: Keylogging
+
+COMMAND AND CONTROL
+- T1071.001 - Application Layer Protocol: Web Protocols
+- T1573.002 - Encrypted Channel: Asymmetric Cryptography
+
+EXFILTRATION
+- T1041 - Exfiltration Over C2 Channel
+- T1048.003 - Exfiltration Over Alternative Protocol
+
+IMPACT
+- T1486 - Data Encrypted for Impact
+- T1499 - Endpoint Denial of Service
+
+DETECTION RECOMMENDATIONS
+
+ENDPOINT DETECTION
+Process Monitoring:
+- Monitor for process injection techniques
+- Alert on suspicious DLL loading
+- Track process hollowing activities
+
+File System Monitoring:
+- Monitor for credit card data patterns
+- Alert on suspicious file modifications
+- Track registry key changes
+
+Network Monitoring:
+- Monitor for C2 communication
+- Alert on data exfiltration patterns
+- Track suspicious DNS queries
+
+SIEM QUERIES
+Process Injection Detection:
+```kql
+DeviceProcessEvents
+| where ProcessCommandLine contains "CreateRemoteThread"
+| where ProcessCommandLine contains "VirtualAllocEx"
+| where ProcessCommandLine contains "WriteProcessMemory"
+```
+
+Credit Card Data Detection:
+```kql
+DeviceFileEvents
+| where FileName contains "credit"
+| where FileName contains "card"
+| where FileName contains "track"
+```
+
+Network Communication:
+```kql
+DeviceNetworkEvents
+| where RemoteIP in ("45.146.164.110", "185.220.101.42", "91.92.240.118")
+| where RemotePort in (443, 8080, 53)
+```
+
+MITIGATION STRATEGIES
+
+IMMEDIATE ACTIONS
+1. Isolate compromised POS systems
+2. Reset all administrative passwords
+3. Deploy additional monitoring tools
+4. Review and update security policies
+
+LONG-TERM MEASURES
+1. Implement network segmentation
+2. Deploy advanced endpoint protection
+3. Regular security awareness training
+4. Continuous security monitoring
+5. Regular penetration testing
+
+CONCLUSION
+This FIN7 campaign represents a significant evolution in POS malware capabilities. Organizations must implement comprehensive security controls and maintain continuous monitoring to detect and respond to such sophisticated threats.

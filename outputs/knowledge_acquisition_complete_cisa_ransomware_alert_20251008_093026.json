@@ -1,0 +1,524 @@
+{
+  "artifacts": {
+    "artifacts": [
+      {
+        "type": "IP address",
+        "value": "45.146.164.110",
+        "properties": {
+          "geolocation": "Bulgaria",
+          "ip_version": "IPv4"
+        },
+        "context": "C2 infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "IP address",
+        "value": "185.220.101.42",
+        "properties": {
+          "geolocation": "Germany",
+          "ip_version": "IPv4"
+        },
+        "context": "C2 infrastructure and TOR exit node",
+        "confidence": "high"
+      },
+      {
+        "type": "IP address",
+        "value": "91.92.240.118",
+        "properties": {
+          "geolocation": "Russia",
+          "ip_version": "IPv4"
+        },
+        "context": "C2 infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "IP address",
+        "value": "198.96.155.3",
+        "properties": {
+          "geolocation": "United States",
+          "ip_version": "IPv4"
+        },
+        "context": "C2 infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "IP address",
+        "value": "192.42.116.16",
+        "properties": {
+          "ip_version": "IPv4"
+        },
+        "context": "TOR exit node",
+        "confidence": "high"
+      },
+      {
+        "type": "IP address",
+        "value": "51.15.70.167",
+        "properties": {
+          "ip_version": "IPv4"
+        },
+        "context": "TOR exit node",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain name",
+        "value": "medical-data-backup.onion",
+        "properties": {
+          "tld": ".onion"
+        },
+        "context": "C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain name",
+        "value": "hospital-secure.onion",
+        "properties": {
+          "tld": ".onion"
+        },
+        "context": "C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain name",
+        "value": "healthcare-crypto.onion",
+        "properties": {
+          "tld": ".onion"
+        },
+        "context": "C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "File hash",
+        "value": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6",
+        "properties": {
+          "hash_type": "SHA256"
+        },
+        "context": "Royal ransomware sample",
+        "confidence": "high"
+      },
+      {
+        "type": "File hash",
+        "value": "8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5",
+        "properties": {
+          "hash_type": "SHA256"
+        },
+        "context": "BlackCat ransomware sample",
+        "confidence": "high"
+      },
+      {
+        "type": "Malware name",
+        "value": "Royal ransomware",
+        "properties": {
+          "variant": "Royal"
+        },
+        "context": "Ransomware variant",
+        "confidence": "high"
+      },
+      {
+        "type": "Malware name",
+        "value": "BlackCat ransomware",
+        "properties": {
+          "variant": "BlackCat"
+        },
+        "context": "Ransomware variant",
+        "confidence": "high"
+      },
+      {
+        "type": "Attack tool",
+        "value": "Cobalt Strike",
+        "properties": {
+          "tool_version": "Not specified"
+        },
+        "context": "Affiliated tool",
+        "confidence": "high"
+      },
+      {
+        "type": "Attack tool",
+        "value": "PowerShell",
+        "properties": {
+          "tool_version": "Not specified"
+        },
+        "context": "Living off the land technique",
+        "confidence": "high"
+      },
+      {
+        "type": "Network port",
+        "value": "443",
+        "properties": {
+          "protocol": "TCP"
+        },
+        "context": "Cobalt Strike beacon configuration",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1078.003",
+        "properties": {
+          "tactic": "Initial Access",
+          "technique": "Valid Accounts: Local Accounts"
+        },
+        "context": "Initial access technique",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1566.001",
+        "properties": {
+          "tactic": "Initial Access",
+          "technique": "Phishing: Spearphishing Attachment"
+        },
+        "context": "Initial access technique",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1190",
+        "properties": {
+          "tactic": "Initial Access",
+          "technique": "Exploit Public-Facing Application"
+        },
+        "context": "Initial access technique",
+        "confidence": "high"
+      },
+      {
+        "type": "Vulnerability",
+        "value": "CVE-2023-23397",
+        "properties": {
+          "description": "Microsoft Outlook Elevation of Privilege Vulnerability"
+        },
+        "context": "Exploited vulnerability",
+        "confidence": "high"
+      },
+      {
+        "type": "Vulnerability",
+        "value": "CVE-2023-21716",
+        "properties": {
+          "description": "Microsoft Office Publisher Remote Code Execution Vulnerability"
+        },
+        "context": "Exploited vulnerability",
+        "confidence": "high"
+      },
+      {
+        "type": "Vulnerability",
+        "value": "CVE-2023-0669",
+        "properties": {
+          "description": "Fortra GoAnywhere MFT Remote Code Execution"
+        },
+        "context": "Exploited vulnerability",
+        "confidence": "high"
+      },
+      {
+        "type": "Vulnerability",
+        "value": "CVE-2023-28252",
+        "properties": {
+          "description": "Windows Common Log File System Driver Elevation of Privilege"
+        },
+        "context": "Exploited vulnerability",
+        "confidence": "high"
+      }
+    ],
+    "extraction_metadata": {
+      "total_artifacts": 25,
+      "high_confidence": 25,
+      "medium_confidence": 0,
+      "low_confidence": 0
+    }
+  },
+  "reasoning_and_mapping": {
+    "reasoning_chains": [
+      {
+        "artifact_id": "IP address - 45.146.164.110",
+        "artifact": {
+          "type": "IP address",
+          "value": "45.146.164.110",
+          "properties": {
+            "geolocation": "Bulgaria",
+            "ip_version": "IPv4"
+          },
+          "context": "C2 infrastructure",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This IP address is associated with Command and Control (C2) infrastructure, indicating its role in facilitating communication between compromised systems and the attacker's infrastructure.",
+            "conclusion": "C2 infrastructure IP address"
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The presence of C2 infrastructure suggests support for the 'Command and Control' tactic, which is a key component of the 'Persistence' and 'Exfiltration' phases.",
+            "conclusion": "Command and Control"
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The use of a dedicated IP address for C2 infrastructure implies the implementation of the 'Application Window Discovery' technique, which involves using a specific IP address to establish a connection with compromised systems.",
+            "conclusion": "Application Window Discovery"
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The C2 infrastructure IP address is likely used during the 'Execution' and 'Maintenance' phases, as it facilitates communication between the attacker's infrastructure and compromised systems.",
+            "conclusion": "Execution and Maintenance"
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The C2 infrastructure IP address is likely established after the initial compromise and before the exfiltration of sensitive data, as it provides a means for the attacker to maintain control over compromised systems and steal sensitive information.",
+            "conclusion": "Established after initial compromise and before exfiltration"
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The mapping of the IP address to the 'Command and Control' tactic and 'Application Window Discovery' technique is justified by the artifact's context as C2 infrastructure, which is a common indicator of malicious activity.",
+            "conclusion": "C2 infrastructure context"
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Command and Control",
+          "technique": "Application Window Discovery",
+          "phase": "Execution and Maintenance",
+          "confidence": "high",
+          "explicit_justification": "The IP address is associated with C2 infrastructure, which is a key component of the 'Command and Control' tactic and 'Application Window Discovery' technique."
+        }
+      },
+      {
+        "artifact_id": "Domain name - medical-data-backup.onion",
+        "artifact": {
+          "type": "Domain name",
+          "value": "medical-data-backup.onion",
+          "properties": {
+            "tld": ".onion"
+          },
+          "context": "C2 domain",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This domain name is associated with C2 infrastructure, indicating its role in facilitating communication between compromised systems and the attacker's infrastructure.",
+            "conclusion": "C2 domain"
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The presence of a C2 domain suggests support for the 'Command and Control' tactic, which is a key component of the 'Persistence' and 'Exfiltration' phases.",
+            "conclusion": "Command and Control"
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The use of a domain name for C2 infrastructure implies the implementation of the 'Domain Name System (DNS) Tunneling' technique, which involves using DNS queries to establish a connection with compromised systems.",
+            "conclusion": "Domain Name System (DNS) Tunneling"
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The C2 domain is likely used during the 'Execution' and 'Maintenance' phases, as it facilitates communication between the attacker's infrastructure and compromised systems.",
+            "conclusion": "Execution and Maintenance"
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The C2 domain is likely established after the initial compromise and before the exfiltration of sensitive data, as it provides a means for the attacker to maintain control over compromised systems and steal sensitive information.",
+            "conclusion": "Established after initial compromise and before exfiltration"
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The mapping of the domain name to the 'Command and Control' tactic and 'Domain Name System (DNS) Tunneling' technique is justified by the artifact's context as a C2 domain, which is a common indicator of malicious activity.",
+            "conclusion": "C2 domain context"
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Command and Control",
+          "technique": "Domain Name System (DNS) Tunneling",
+          "phase": "Execution and Maintenance",
+          "confidence": "high",
+          "explicit_justification": "The domain name is associated with C2 infrastructure, which is a key component of the 'Command and Control' tactic and 'Domain Name System (DNS) Tunneling' technique."
+        }
+      },
+      {
+        "artifact_id": "File hash - 9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6",
+        "artifact": {
+          "type": "File hash",
+          "value": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6",
+          "properties": {
+            "hash_type": "SHA256"
+          },
+          "context": "Royal ransomware sample",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This file hash is associated with a Royal ransomware sample, indicating its role in identifying and analyzing malicious software.",
+            "conclusion": "Ransomware sample"
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The presence of a ransomware sample suggests support for the 'Data Encrypted for Impact' tactic, which is a key component of the 'Impact' phase.",
+            "conclusion": "Data Encrypted for Impact"
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The use of a ransomware sample implies the implementation of the 'Data Encrypted for Impact' technique, which involves encrypting sensitive data to extort a ransom from the victim.",
+            "conclusion": "Data Encrypted for Impact"
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The ransomware sample is likely used during the 'Impact' phase, as it is designed to encrypt sensitive data and extort a ransom from the victim.",
+            "conclusion": "Impact"
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The ransomware sample is likely used after the initial compromise and establishment of C2 infrastructure, as it provides a means for the attacker to encrypt sensitive data and extort a ransom from the victim.",
+            "conclusion": "Used after initial compromise and C2 establishment"
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The mapping of the file hash to the 'Data Encrypted for Impact' tactic and technique is justified by the artifact's context as a Royal ransomware sample, which is a common indicator of malicious activity.",
+            "conclusion": "Ransomware sample context"
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Data Encrypted for Impact",
+          "technique": "Data Encrypted for Impact",
+          "phase": "Impact",
+          "confidence": "high",
+          "explicit_justification": "The file hash is associated with a Royal ransomware sample, which is a key component of the 'Data Encrypted for Impact' tactic and technique."
+        }
+      },
+      {
+        "artifact_id": "MITRE ATT&CK technique ID - T1078.003",
+        "artifact": {
+          "type": "MITRE ATT&CK technique ID",
+          "value": "T1078.003",
+          "properties": {
+            "tactic": "Initial Access",
+            "technique": "Valid Accounts: Local Accounts"
+          },
+          "context": "Initial access technique",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This MITRE ATT&CK technique ID is associated with the 'Valid Accounts: Local Accounts' technique, indicating its role in identifying and analyzing initial access techniques.",
+            "conclusion": "Initial access technique"
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The presence of the 'Valid Accounts: Local Accounts' technique suggests support for the 'Initial Access' tactic, which is a key component of the 'Preparation' phase.",
+            "conclusion": "Initial Access"
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The use of the 'Valid Accounts: Local Accounts' technique implies the implementation of the 'Valid Accounts' technique, which involves using local accounts to gain initial access to a system.",
+            "conclusion": "Valid Accounts"
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The 'Valid Accounts: Local Accounts' technique is likely used during the 'Preparation' phase, as it provides a means for the attacker to gain initial access to a system.",
+            "conclusion": "Preparation"
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The 'Valid Accounts: Local Accounts' technique is likely used before the establishment of C2 infrastructure and the encryption of sensitive data, as it provides a means for the attacker to gain initial access to a system.",
+            "conclusion": "Used before C2 establishment and data encryption"
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The mapping of the MITRE ATT&CK technique ID to the 'Initial Access' tactic and 'Valid Accounts' technique is justified by the artifact's context as an initial access technique, which is a common indicator of malicious activity.",
+            "conclusion": "Initial access technique context"
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Initial Access",
+          "technique": "Valid Accounts",
+          "phase": "Preparation",
+          "confidence": "high",
+          "explicit_justification": "The MITRE ATT&CK technique ID is associated with the 'Valid Accounts: Local Accounts' technique, which is a key component of the 'Initial Access' tactic and 'Valid Accounts' technique."
+        }
+      }
+    ],
+    "attack_timeline": [
+      {
+        "phase": "Preparation",
+        "tactic": "Initial Access",
+        "technique": "Valid Accounts",
+        "artifacts": [
+          "MITRE ATT&CK technique ID - T1078.003"
+        ],
+        "chronological_order": 1,
+        "causal_relationships": [
+          "Initial access provides a means for the attacker to gain access to the system"
+        ],
+        "phase_justification": "The 'Preparation' phase is the initial stage of the attack lifecycle, where the attacker gains access to the system using the 'Valid Accounts' technique."
+      },
+      {
+        "phase": "Execution",
+        "tactic": "Command and Control",
+        "technique": "Application Window Discovery",
+        "artifacts": [
+          "IP address - 45.146.164.110"
+        ],
+        "chronological_order": 2,
+        "causal_relationships": [
+          "C2 infrastructure is established after initial access"
+        ],
+        "phase_justification": "The 'Execution' phase is where the attacker establishes C2 infrastructure using the 'Application Window Discovery' technique, providing a means for the attacker to maintain control over the system."
+      },
+      {
+        "phase": "Maintenance",
+        "tactic": "Command and Control",
+        "technique": "Domain Name System (DNS) Tunneling",
+        "artifacts": [
+          "Domain name - medical-data-backup.onion"
+        ],
+        "chronological_order": 3,
+        "causal_relationships": [
+          "C2 infrastructure is used to maintain control over the system"
+        ],
+        "phase_justification": "The 'Maintenance' phase is where the attacker maintains control over the system using the 'Domain Name System (DNS) Tunneling' technique, providing a means for the attacker to steal sensitive information."
+      },
+      {
+        "phase": "Impact",
+        "tactic": "Data Encrypted for Impact",
+        "technique": "Data Encrypted for Impact",
+        "artifacts": [
+          "File hash - 9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6"
+        ],
+        "chronological_order": 4,
+        "causal_relationships": [
+          "Data encryption provides a means for the attacker to extort a ransom from the victim"
+        ],
+        "phase_justification": "The 'Impact' phase is where the attacker encrypts sensitive data using the 'Data Encrypted for Impact' technique, providing a means for the attacker to extort a ransom from the victim."
+      }
+    ],
+    "overall_attack_narrative": "The attack begins with the 'Initial Access' phase, where the attacker gains access to the system using the 'Valid Accounts' technique. The attacker then establishes C2 infrastructure using the 'Application Window Discovery' technique, providing a means for the attacker to maintain control over the system. The attacker then uses the 'Domain Name System (DNS) Tunneling' technique to steal sensitive information. Finally, the attacker encrypts sensitive data using the 'Data Encrypted for Impact' technique, providing a means for the attacker to extort a ransom from the victim.",
+    "confidence_assessment": {
+      "overall_confidence": "high",
+      "reasoning_quality": "The reasoning quality is high, as the artifacts are mapped to the strategic attack framework using a clear and logical chain of reasoning.",
+      "mapping_validation": "The mapping validation is high, as the artifacts are mapped to the strategic attack framework using a clear and logical chain of reasoning, and the justifications for each mapping are explicit and well-supported."
+    }
+  },
+  "source_file": "reports/cisa_ransomware_alert.txt",
+  "analysis_timestamp": "20251008_093026",
+  "analysis_tool": "Automated Knowledge Acquisition Layer v2.0",
+  "ontology_ready": true
+}

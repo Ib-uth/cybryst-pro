@@ -1,0 +1,350 @@
+TREND MICRO THREAT RESEARCH
+ADVANCED THREAT ANALYSIS REPORT
+==============================
+
+THREAT ACTOR: Earth Kitsune (APT-C-35)
+CAMPAIGN: Supply Chain Attack on Software Vendors
+DATE: August 25, 2024
+THREAT LEVEL: HIGH
+
+EXECUTIVE SUMMARY
+Trend Micro's Threat Research team has identified a sophisticated supply chain attack campaign targeting software development companies and their customers. The threat actor, tracked as Earth Kitsune (APT-C-35), has developed advanced techniques for compromising software build systems and distributing malicious updates to downstream customers.
+
+CAMPAIGN OVERVIEW
+
+TARGETING METHODOLOGY
+Primary Targets:
+- Software development companies
+- DevOps and CI/CD pipeline providers
+- Code repository hosting services
+- Software distribution platforms
+- Enterprise software vendors
+
+Attack Vectors:
+1. CI/CD Pipeline Compromise
+   - Compromising build servers and automation tools
+   - Injecting malicious code into software builds
+   - Manipulating software update mechanisms
+
+2. Code Repository Attacks
+   - Compromising Git repositories
+   - Malicious commit injection
+   - Pull request manipulation
+
+3. Software Distribution Compromise
+   - Compromising software download servers
+   - Malicious installer modification
+   - Digital signature forgery
+
+MALWARE ANALYSIS
+
+SUPPLY CHAIN BACKDOOR
+Primary Payload:
+- File Name: software_update.exe
+- SHA256: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0
+- MD5: d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6
+- File Size: 5,678,901 bytes
+- Compilation Date: 2024-08-20 11:22:44 UTC
+
+Capabilities:
+- Remote command execution
+- File system access and modification
+- Network reconnaissance
+- Credential harvesting
+- Data exfiltration
+
+Persistence Mechanisms:
+- Registry Run Key: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\SoftwareUpdate
+- Scheduled Task: "SystemMaintenance"
+- Service Installation: "WindowsUpdateService"
+- DLL Hijacking: version.dll
+
+ADVANCED EVASION TECHNIQUES
+
+CODE OBFUSCATION
+String Encryption:
+- AES-256 encryption for sensitive strings
+- Base64 encoding with custom alphabet
+- XOR encryption with dynamic keys
+- ROT13 with variable rotation
+
+Control Flow Obfuscation:
+- Dead code insertion
+- Control flow flattening
+- Function inlining
+- Jump table obfuscation
+
+Anti-Analysis Techniques:
+- Virtual machine detection
+- Debugger detection
+- Sandbox evasion
+- Timing-based analysis
+
+PROCESS INJECTION METHODS
+Process Hollowing:
+- Target Process: explorer.exe
+- Injection Method: Process Hollowing
+- Payload Location: 0x00400000
+
+DLL Injection:
+- Target Processes: svchost.exe, winlogon.exe
+- Injection Method: CreateRemoteThread
+- DLL Name: software_monitor.dll
+
+Process Doppelgänging:
+- Target Process: notepad.exe
+- Transaction Method: CreateTransaction
+- Rollback Technique: RollbackTransaction
+
+SUPPLY CHAIN COMPROMISE
+
+BUILD SYSTEM INFILTRATION
+CI/CD Pipeline Targeting:
+- Jenkins build server compromise
+- Azure DevOps pipeline manipulation
+- GitHub Actions workflow modification
+- GitLab CI/CD runner compromise
+
+Build Artifact Modification:
+- Malicious DLL injection into builds
+- Backdoor insertion into executables
+- Configuration file manipulation
+- Digital signature bypass
+
+Software Update Mechanism Abuse:
+- Malicious update package creation
+- Update server compromise
+- Update verification bypass
+- Rollback mechanism exploitation
+
+CODE REPOSITORY ATTACKS
+
+GIT REPOSITORY COMPROMISE
+Malicious Commit Injection:
+- Commit Hash: a1b2c3d4e5f6789012345678901234567890abcd
+- Author: "Developer <developer@company.com>"
+- Message: "Fix security vulnerability in authentication module"
+
+Pull Request Manipulation:
+- Malicious code insertion
+- Security bypass implementation
+- Backdoor functionality addition
+- Configuration modification
+
+Branch Manipulation:
+- Malicious branch creation
+- Code injection into main branch
+- History rewriting
+- Force push operations
+
+NETWORK COMMUNICATION
+
+COMMAND AND CONTROL INFRASTRUCTURE
+Primary C2 Servers:
+- IP Address: 45.146.164.110 (Bulgaria)
+- Port: 443 (HTTPS)
+- Domain: software-update.trusted-site.com
+- SSL Certificate: Let's Encrypt (Issued: 2024-08-15)
+
+Secondary C2 Servers:
+- IP Address: 185.220.101.42 (Germany)
+- Port: 8080 (HTTP)
+- Domain: build-monitor.net
+- Backup Domain: update-server.org
+
+Communication Protocol:
+- HTTP/HTTPS POST requests
+- JSON-encoded payloads
+- AES-256 encryption
+- Base64 encoding
+
+Data Exfiltration:
+- Source code files
+- Configuration data
+- Credential information
+- System configuration data
+
+LATERAL MOVEMENT TECHNIQUES
+
+NETWORK DISCOVERY
+Active Scanning:
+- ARP table enumeration
+- Port scanning (TCP 445, 3389, 22, 5985)
+- Service enumeration
+- Share discovery
+
+Passive Reconnaissance:
+- Network traffic analysis
+- DNS query monitoring
+- SNMP information gathering
+- LLMNR/NBT-NS poisoning
+
+CREDENTIAL HARVESTING
+Methods:
+- LSASS memory dumping
+- Credential manager access
+- Browser password extraction
+- Keylogger installation
+
+Tools Used:
+- Mimikatz for credential dumping
+- LaZagne for password recovery
+- Browser password extractors
+- Custom keylogging modules
+
+INDICATORS OF COMPROMISE (IOCs)
+
+FILE HASHES
+Malicious Files:
+- software_update.exe: SHA256: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0
+- software_monitor.dll: SHA256: 6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0
+- build_helper.exe: SHA256: 5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1
+
+Dropped Files:
+- %TEMP%\software_data.bin
+- %APPDATA%\Microsoft\Windows\Themes\monitor.dll
+- %PROGRAMDATA%\Windows\System32\drivers\update.sys
+
+REGISTRY KEYS
+Persistence Keys:
+- HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\SoftwareUpdate
+- HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell
+- HKEY_CURRENT_USER\Software\Classes\CLSID\{76543210-6543-6543-6543-210987654321}
+
+Configuration Keys:
+- HKEY_CURRENT_USER\Software\SoftwareMonitor\Config
+- HKEY_LOCAL_MACHINE\SOFTWARE\SoftwareMonitor\Settings
+
+NETWORK INDICATORS
+IP Addresses:
+- 45.146.164.110 (Primary C2)
+- 185.220.101.42 (Secondary C2)
+- 91.92.240.118 (Backup C2)
+- 203.0.113.45 (Exfiltration server)
+
+Domain Names:
+- software-update.trusted-site.com
+- build-monitor.net
+- update-server.org
+- software-sync.legitimate-domain.com
+
+User-Agent Strings:
+- Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+- Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0
+
+MITRE ATT&CK MAPPING
+
+INITIAL ACCESS
+- T1195.002 - Supply Chain Compromise: Compromise Software Supply Chain
+- T1566.001 - Phishing: Spearphishing Attachment
+- T1190 - Exploit Public-Facing Application
+
+EXECUTION
+- T1059.001 - Command and Scripting Interpreter: PowerShell
+- T1204.002 - User Execution: Malicious File
+- T1055 - Process Injection
+
+PERSISTENCE
+- T1543.003 - Create or Modify System Process: Windows Service
+- T1053.005 - Scheduled Task/Job: Scheduled Task
+- T1547.001 - Boot or Logon Autostart Execution: Registry Run Keys
+
+PRIVILEGE ESCALATION
+- T1548.002 - Abuse Elevation Control Mechanism: Bypass User Account Control
+- T1078.003 - Valid Accounts: Local Accounts
+
+DEFENSE EVASION
+- T1562.001 - Impair Defenses: Disable or Modify Tools
+- T1027 - Obfuscated Files or Information
+- T1055 - Process Injection
+
+CREDENTIAL ACCESS
+- T1003.001 - OS Credential Dumping: LSASS Memory
+- T1552.001 - Unsecured Credentials: Credentials in Files
+
+DISCOVERY
+- T1083 - File and Directory Discovery
+- T1082 - System Information Discovery
+- T1018 - Remote System Discovery
+
+LATERAL MOVEMENT
+- T1021.001 - Remote Services: Remote Desktop Protocol
+- T1021.002 - Remote Services: SMB/Windows Admin Shares
+- T1078.003 - Valid Accounts: Local Accounts
+
+COLLECTION
+- T1005 - Data from Local System
+- T1039 - Data from Network Shared Drive
+- T1056.001 - Input Capture: Keylogging
+
+COMMAND AND CONTROL
+- T1071.001 - Application Layer Protocol: Web Protocols
+- T1573.002 - Encrypted Channel: Asymmetric Cryptography
+
+EXFILTRATION
+- T1041 - Exfiltration Over C2 Channel
+- T1048.003 - Exfiltration Over Alternative Protocol
+
+IMPACT
+- T1486 - Data Encrypted for Impact
+- T1499 - Endpoint Denial of Service
+
+DETECTION RECOMMENDATIONS
+
+ENDPOINT DETECTION
+Process Monitoring:
+- Monitor for process injection techniques
+- Alert on suspicious DLL loading
+- Track process hollowing activities
+
+File System Monitoring:
+- Monitor for software update files
+- Alert on suspicious file modifications
+- Track registry key changes
+
+Network Monitoring:
+- Monitor for C2 communication
+- Alert on data exfiltration patterns
+- Track suspicious DNS queries
+
+SIEM QUERIES
+Process Injection Detection:
+```kql
+DeviceProcessEvents
+| where ProcessCommandLine contains "CreateRemoteThread"
+| where ProcessCommandLine contains "VirtualAllocEx"
+| where ProcessCommandLine contains "WriteProcessMemory"
+```
+
+Software Update Detection:
+```kql
+DeviceFileEvents
+| where FileName contains "update"
+| where FileName contains "software"
+| where FileName contains "install"
+```
+
+Network Communication:
+```kql
+DeviceNetworkEvents
+| where RemoteIP in ("45.146.164.110", "185.220.101.42", "91.92.240.118")
+| where RemotePort in (443, 8080, 53)
+```
+
+MITIGATION STRATEGIES
+
+IMMEDIATE ACTIONS
+1. Isolate compromised systems
+2. Reset all administrative passwords
+3. Deploy additional monitoring tools
+4. Review and update security policies
+
+LONG-TERM MEASURES
+1. Implement network segmentation
+2. Deploy advanced endpoint protection
+3. Regular security awareness training
+4. Continuous security monitoring
+5. Regular penetration testing
+
+CONCLUSION
+This Earth Kitsune campaign represents a significant threat to software supply chains. Organizations must implement comprehensive security controls and maintain continuous monitoring to detect and respond to such sophisticated threats.

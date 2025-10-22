@@ -1,0 +1,34 @@
+AUTOMATED KNOWLEDGE ACQUISITION LAYER - ANALYSIS SUMMARY
+======================================================================
+
+Source File: reports/microsoft_threat_intel.txt
+Analysis Date: 2025-10-08 09:31:28
+Tool: Automated Knowledge Acquisition Layer v2.0
+
+ATTACK NARRATIVE:
+------------------------------
+The attacker uses phishing and valid accounts to gain initial access to a system or network. Once inside, the attacker uses a malicious application to execute malicious code and maintain persistence using a C2 server.
+
+CONFIDENCE ASSESSMENT:
+------------------------------
+Overall Confidence: high
+Reasoning Quality: The reasoning process is based on a thorough analysis of the artifacts and their relationships, providing a clear and coherent attack narrative.
+
+STRATEGIC ATTACK FRAMEWORK TIMELINE:
+------------------------------
+
+1. PREPARATION
+   Tactic: Initial Access
+   Technique: Phishing
+
+2. PREPARATION
+   Tactic: Initial Access
+   Technique: Valid Accounts: Cloud Accounts
+
+3. EXECUTION
+   Tactic: Initial Access
+   Technique: Malicious Application
+
+4. MAINTENANCE
+   Tactic: Persistence
+   Technique: Command and Control

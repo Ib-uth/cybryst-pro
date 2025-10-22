@@ -1,0 +1,542 @@
+{
+  "artifacts": {
+    "artifacts": [
+      {
+        "type": "IP Address",
+        "value": "45.146.164.110",
+        "properties": {
+          "geolocation": "Bulgaria",
+          "port": 443,
+          "protocol": "HTTPS"
+        },
+        "context": "Primary C2 server",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "185.220.101.42",
+        "properties": {
+          "geolocation": "Germany",
+          "port": 8080,
+          "protocol": "HTTP"
+        },
+        "context": "Secondary C2 server",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "91.92.240.118",
+        "properties": {},
+        "context": "Backup C2 server",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "203.0.113.45",
+        "properties": {},
+        "context": "Exfiltration server",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0",
+        "properties": {
+          "hash_type": "SHA256",
+          "file_name": "software_update.exe"
+        },
+        "context": "Malicious file",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6",
+        "properties": {
+          "hash_type": "MD5",
+          "file_name": "software_update.exe"
+        },
+        "context": "Malicious file",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0",
+        "properties": {
+          "hash_type": "SHA256",
+          "file_name": "software_monitor.dll"
+        },
+        "context": "Malicious file",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1",
+        "properties": {
+          "hash_type": "SHA256",
+          "file_name": "build_helper.exe"
+        },
+        "context": "Malicious file",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "software-update.trusted-site.com",
+        "properties": {
+          "TLD": ".com"
+        },
+        "context": "Primary C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "build-monitor.net",
+        "properties": {
+          "TLD": ".net"
+        },
+        "context": "Secondary C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "update-server.org",
+        "properties": {
+          "TLD": ".org"
+        },
+        "context": "Backup C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "software-sync.legitimate-domain.com",
+        "properties": {
+          "TLD": ".com"
+        },
+        "context": "Legitimate domain used for C2 communication",
+        "confidence": "high"
+      },
+      {
+        "type": "Email Address",
+        "value": "developer@company.com",
+        "properties": {
+          "domain": "company.com"
+        },
+        "context": "Malicious commit author",
+        "confidence": "high"
+      },
+      {
+        "type": "File Path",
+        "value": "%TEMP%\\software_data.bin",
+        "properties": {
+          "system_context": "Temporary files"
+        },
+        "context": "Dropped file",
+        "confidence": "high"
+      },
+      {
+        "type": "File Path",
+        "value": "%APPDATA%\\Microsoft\\Windows\\Themes\\monitor.dll",
+        "properties": {
+          "system_context": "Application data"
+        },
+        "context": "Dropped file",
+        "confidence": "high"
+      },
+      {
+        "type": "File Path",
+        "value": "%PROGRAMDATA%\\Windows\\System32\\drivers\\update.sys",
+        "properties": {
+          "system_context": "System drivers"
+        },
+        "context": "Dropped file",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SoftwareUpdate",
+        "properties": {
+          "hive": "HKEY_CURRENT_USER"
+        },
+        "context": "Persistence mechanism",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell",
+        "properties": {
+          "hive": "HKEY_LOCAL_MACHINE"
+        },
+        "context": "Persistence mechanism",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_CURRENT_USER\\Software\\Classes\\CLSID\\{76543210-6543-6543-6543-210987654321}",
+        "properties": {
+          "hive": "HKEY_CURRENT_USER"
+        },
+        "context": "Persistence mechanism",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "explorer.exe",
+        "properties": {
+          "execution_context": "Process hollowing"
+        },
+        "context": "Target process for process hollowing",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "svchost.exe",
+        "properties": {
+          "execution_context": "DLL injection"
+        },
+        "context": "Target process for DLL injection",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "winlogon.exe",
+        "properties": {
+          "execution_context": "DLL injection"
+        },
+        "context": "Target process for DLL injection",
+        "confidence": "high"
+      },
+      {
+        "type": "Network Port",
+        "value": 443,
+        "properties": {
+          "protocol": "HTTPS"
+        },
+        "context": "Primary C2 port",
+        "confidence": "high"
+      },
+      {
+        "type": "Network Port",
+        "value": 8080,
+        "properties": {
+          "protocol": "HTTP"
+        },
+        "context": "Secondary C2 port",
+        "confidence": "high"
+      },
+      {
+        "type": "User Account",
+        "value": "Local Accounts",
+        "properties": {
+          "privilege_level": "Local"
+        },
+        "context": "Privilege escalation",
+        "confidence": "high"
+      },
+      {
+        "type": "Timestamp",
+        "value": "2024-08-20 11:22:44 UTC",
+        "properties": {
+          "timezone": "UTC"
+        },
+        "context": "Compilation date of malicious file",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "T1195.002",
+        "properties": {
+          "technique": "Supply Chain Compromise: Compromise Software Supply Chain"
+        },
+        "context": "Initial access technique",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "T1059.001",
+        "properties": {
+          "technique": "Command and Scripting Interpreter: PowerShell"
+        },
+        "context": "Execution technique",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "T1543.003",
+        "properties": {
+          "technique": "Create or Modify System Process: Windows Service"
+        },
+        "context": "Persistence technique",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "T1003.001",
+        "properties": {
+          "technique": "OS Credential Dumping: LSASS Memory"
+        },
+        "context": "Credential access technique",
+        "confidence": "high"
+      },
+      {
+        "type": "Malware Name",
+        "value": "Earth Kitsune",
+        "properties": {
+          "variant": "APT-C-35"
+        },
+        "context": "Threat actor",
+        "confidence": "high"
+      },
+      {
+        "type": "Attack Tool",
+        "value": "Mimikatz",
+        "properties": {
+          "version": "Unknown"
+        },
+        "context": "Credential dumping tool",
+        "confidence": "high"
+      },
+      {
+        "type": "Attack Tool",
+        "value": "LaZagne",
+        "properties": {
+          "version": "Unknown"
+        },
+        "context": "Password recovery tool",
+        "confidence": "high"
+      }
+    ],
+    "extraction_metadata": {
+      "total_artifacts": 34,
+      "high_confidence": 34,
+      "medium_confidence": 0,
+      "low_confidence": 0
+    }
+  },
+  "reasoning_and_mapping": {
+    "reasoning_chains": [
+      {
+        "artifact_id": "IP Address: 45.146.164.110",
+        "artifact": {
+          "type": "IP Address",
+          "value": "45.146.164.110",
+          "properties": {
+            "geolocation": "Bulgaria",
+            "port": 443,
+            "protocol": "HTTPS"
+          },
+          "context": "Primary C2 server",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This IP address is used as a primary command and control (C2) server, which is a central location for controlling and coordinating malicious activities.",
+            "conclusion": "The technical function of this artifact is to serve as a C2 server."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The primary C2 server supports the tactic of Command and Control, which is a critical component of the attack lifecycle.",
+            "conclusion": "The attack tactic supported by this artifact is Command and Control."
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The primary C2 server implements the technique of HTTPS communication, which is a secure protocol used for communication between the C2 server and compromised hosts.",
+            "conclusion": "The specific technique implemented by this artifact is HTTPS communication."
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The primary C2 server is used during the Execution phase of the attack lifecycle, where the attacker establishes communication with compromised hosts and issues commands.",
+            "conclusion": "The phase of the attack lifecycle for this artifact is Execution."
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The primary C2 server is used after the initial compromise of the host, and is used to establish communication and issue commands.",
+            "conclusion": "The primary C2 server is used after the initial compromise and is a critical component of the attack lifecycle."
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The explicit justification for this mapping is that the primary C2 server is a critical component of the attack lifecycle, and is used to establish communication and issue commands to compromised hosts.",
+            "conclusion": "The explicit justification for this mapping is the critical role of the primary C2 server in the attack lifecycle."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Command and Control",
+          "technique": "HTTPS communication",
+          "phase": "Execution",
+          "confidence": "high",
+          "explicit_justification": "The primary C2 server is a critical component of the attack lifecycle, and is used to establish communication and issue commands to compromised hosts."
+        }
+      },
+      {
+        "artifact_id": "File Hash: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0",
+        "artifact": {
+          "type": "File Hash",
+          "value": "7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0",
+          "properties": {
+            "hash_type": "SHA256",
+            "file_name": "software_update.exe"
+          },
+          "context": "Malicious file",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This file hash is used to identify a malicious file, which is a critical component of the attack lifecycle.",
+            "conclusion": "The technical function of this artifact is to identify a malicious file."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The malicious file supports the tactic of Initial Access, which is the initial stage of the attack lifecycle.",
+            "conclusion": "The attack tactic supported by this artifact is Initial Access."
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The malicious file implements the technique of Supply Chain Compromise, which is a technique used to compromise the software supply chain.",
+            "conclusion": "The specific technique implemented by this artifact is Supply Chain Compromise."
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The malicious file is used during the Preparation phase of the attack lifecycle, where the attacker prepares the malicious file for distribution.",
+            "conclusion": "The phase of the attack lifecycle for this artifact is Preparation."
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The malicious file is used before the initial compromise of the host, and is used to establish a foothold on the host.",
+            "conclusion": "The malicious file is used before the initial compromise and is a critical component of the attack lifecycle."
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The explicit justification for this mapping is that the malicious file is a critical component of the attack lifecycle, and is used to establish a foothold on the host.",
+            "conclusion": "The explicit justification for this mapping is the critical role of the malicious file in the attack lifecycle."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Initial Access",
+          "technique": "Supply Chain Compromise",
+          "phase": "Preparation",
+          "confidence": "high",
+          "explicit_justification": "The malicious file is a critical component of the attack lifecycle, and is used to establish a foothold on the host."
+        }
+      },
+      {
+        "artifact_id": "Registry Key: HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SoftwareUpdate",
+        "artifact": {
+          "type": "Registry Key",
+          "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SoftwareUpdate",
+          "properties": {
+            "hive": "HKEY_CURRENT_USER"
+          },
+          "context": "Persistence mechanism",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This registry key is used as a persistence mechanism, which is a critical component of the attack lifecycle.",
+            "conclusion": "The technical function of this artifact is to serve as a persistence mechanism."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The persistence mechanism supports the tactic of Persistence, which is a critical component of the attack lifecycle.",
+            "conclusion": "The attack tactic supported by this artifact is Persistence."
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The persistence mechanism implements the technique of Registry Run Key, which is a technique used to establish persistence on a host.",
+            "conclusion": "The specific technique implemented by this artifact is Registry Run Key."
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The persistence mechanism is used during the Maintenance phase of the attack lifecycle, where the attacker establishes persistence on the host.",
+            "conclusion": "The phase of the attack lifecycle for this artifact is Maintenance."
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The persistence mechanism is used after the initial compromise of the host, and is used to establish persistence on the host.",
+            "conclusion": "The persistence mechanism is used after the initial compromise and is a critical component of the attack lifecycle."
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The explicit justification for this mapping is that the persistence mechanism is a critical component of the attack lifecycle, and is used to establish persistence on the host.",
+            "conclusion": "The explicit justification for this mapping is the critical role of the persistence mechanism in the attack lifecycle."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Persistence",
+          "technique": "Registry Run Key",
+          "phase": "Maintenance",
+          "confidence": "high",
+          "explicit_justification": "The persistence mechanism is a critical component of the attack lifecycle, and is used to establish persistence on the host."
+        }
+      }
+    ],
+    "attack_timeline": [
+      {
+        "phase": "Preparation",
+        "tactic": "Initial Access",
+        "technique": "Supply Chain Compromise",
+        "artifacts": [
+          "File Hash: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0"
+        ],
+        "chronological_order": 1,
+        "causal_relationships": [
+          "Initial compromise of the host"
+        ],
+        "phase_justification": "The Preparation phase is the initial stage of the attack lifecycle, where the attacker prepares the malicious file for distribution."
+      },
+      {
+        "phase": "Execution",
+        "tactic": "Command and Control",
+        "technique": "HTTPS communication",
+        "artifacts": [
+          "IP Address: 45.146.164.110"
+        ],
+        "chronological_order": 2,
+        "causal_relationships": [
+          "Initial compromise of the host"
+        ],
+        "phase_justification": "The Execution phase is the stage of the attack lifecycle where the attacker establishes communication with compromised hosts and issues commands."
+      },
+      {
+        "phase": "Maintenance",
+        "tactic": "Persistence",
+        "technique": "Registry Run Key",
+        "artifacts": [
+          "Registry Key: HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SoftwareUpdate"
+        ],
+        "chronological_order": 3,
+        "causal_relationships": [
+          "Initial compromise of the host"
+        ],
+        "phase_justification": "The Maintenance phase is the stage of the attack lifecycle where the attacker establishes persistence on the host."
+      }
+    ],
+    "overall_attack_narrative": "The attack begins with the Preparation phase, where the attacker prepares the malicious file for distribution. The malicious file is used to establish an initial foothold on the host, and is followed by the Execution phase, where the attacker establishes communication with compromised hosts and issues commands. The attacker then establishes persistence on the host using a persistence mechanism, such as a registry run key. The overall attack narrative is a complex and multi-stage attack that involves multiple tactics and techniques.",
+    "confidence_assessment": {
+      "overall_confidence": "high",
+      "reasoning_quality": "The reasoning quality is high, as the attack timeline and overall attack narrative are well-supported by the artifacts and reasoning steps.",
+      "mapping_validation": "The mapping validation is high, as the mappings are well-supported by the artifacts and reasoning steps."
+    }
+  },
+  "source_file": "reports/trendmicro_analysis.txt",
+  "analysis_timestamp": "20251008_093428",
+  "analysis_tool": "Automated Knowledge Acquisition Layer v2.0",
+  "ontology_ready": true
+}

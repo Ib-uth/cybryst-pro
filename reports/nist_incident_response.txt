@@ -1,0 +1,183 @@
+NIST CYBERSECURITY FRAMEWORK INCIDENT RESPONSE
+==============================================
+
+INCIDENT REPORT: IR-2024-0156
+Organization: Global Manufacturing Corp
+Incident Type: Advanced Persistent Threat (APT)
+Date: April 3, 2024
+Classification: CONFIDENTIAL
+
+INCIDENT OVERVIEW
+This incident involved a sophisticated multi-stage attack targeting intellectual property and operational technology systems. The attack demonstrated advanced evasion techniques and persistence mechanisms consistent with state-sponsored threat actor behavior.
+
+INCIDENT RESPONSE PHASE ANALYSIS
+
+IDENTIFY PHASE
+Affected Systems:
+- Manufacturing Execution System (MES): SRV-MES-01 (192.168.10.50)
+- Industrial Control System (ICS): PLC-001 (192.168.20.100)
+- Database Server: SRV-DB-01 (192.168.10.25)
+- Domain Controller: DC-01 (192.168.10.1)
+
+Critical Assets Compromised:
+- Product design specifications
+- Manufacturing process parameters
+- Quality control algorithms
+- Customer order information
+
+PROTECT PHASE
+Security Controls Evaded:
+- Next-generation firewall (Fortinet FortiGate 3000D)
+- Endpoint detection and response (CrowdStrike Falcon)
+- Network intrusion detection system (Snort)
+- Data loss prevention (DLP) system
+
+Vulnerabilities Exploited:
+- CVE-2023-23397: Microsoft Outlook Elevation of Privilege
+- CVE-2023-21716: Microsoft Office Publisher RCE
+- CVE-2023-0669: Fortra GoAnywhere MFT RCE
+- CVE-2023-28252: Windows CLFS Driver EoP
+
+DETECT PHASE
+Initial Detection:
+- Timestamp: 2024-04-03 14:23:45 UTC
+- Source: SIEM alert (Splunk Enterprise Security)
+- Alert ID: SEC-2024-0415
+- Severity: High
+
+Detection Mechanisms:
+- Network traffic analysis
+- Endpoint behavioral monitoring
+- Log correlation and analysis
+- Threat intelligence matching
+
+RESPOND PHASE
+Response Timeline:
+- T+0:00 - Initial alert received
+- T+0:15 - Incident response team activated
+- T+0:30 - Threat hunting initiated
+- T+1:15 - Containment procedures implemented
+- T+2:45 - Forensic analysis begun
+- T+4:30 - Communication plan executed
+
+Containment Actions:
+1. Network isolation of compromised systems
+2. Credential rotation for all affected accounts
+3. Deployment of additional monitoring tools
+4. Implementation of emergency access controls
+
+RECOVER PHASE
+Recovery Procedures:
+1. System restoration from clean backups
+2. Security patch deployment
+3. Configuration hardening
+4. Security control validation
+5. Business continuity verification
+
+TECHNICAL INDICATORS
+
+NETWORK COMMUNICATIONS
+Command and Control Infrastructure:
+- Primary C2: 203.0.113.45:443 (HTTPS)
+- Secondary C2: 198.51.100.89:8080 (HTTP)
+- Backup C2: 192.0.2.78:53 (DNS)
+
+Domain Names:
+- secure-upload.legitimate-looking.com
+- api-gateway.trusted-service.net
+- backup-storage.cloud-provider.org
+
+User-Agent Strings:
+- Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+- Microsoft Office/16.0 (Microsoft Outlook 16.0.14326.20404; Pro)
+
+MALWARE ARTIFACTS
+Primary Payload:
+- File Name: system_update.exe
+- File Path: %TEMP%\system_update.exe
+- SHA256: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0
+- MD5: 5d41402abc4b2a76b9719d911017c592
+- File Size: 2,048,576 bytes
+
+Dropped Files:
+- %APPDATA%\Microsoft\Windows\Themes\wallpaper.dll
+- %PROGRAMDATA%\Windows\System32\drivers\update.sys
+- %WINDOWS%\System32\config\systemprofile\Desktop\readme.txt
+
+Registry Modifications:
+- HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\WindowsDefender
+- HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell
+- HKEY_CURRENT_USER\Software\Classes\CLSID\{87654321-4321-4321-4321-210987654321}
+
+PROCESS INFORMATION
+Malicious Processes:
+- Process Name: svchost.exe
+- PID: 1234
+- Parent PID: 5678
+- Command Line: "C:\Windows\System32\svchost.exe -k netsvcs -p -s NlaSvc"
+- Working Directory: C:\Windows\System32
+
+Injected Processes:
+- explorer.exe (PID: 2345)
+- winlogon.exe (PID: 3456)
+- lsass.exe (PID: 4567)
+
+NETWORK PROTOCOLS AND PORTS
+Observed Traffic:
+- TCP/443 (HTTPS) - Primary C2 communication
+- TCP/8080 (HTTP) - Secondary C2 communication
+- TCP/53 (DNS) - DNS tunneling
+- TCP/445 (SMB) - Lateral movement
+- TCP/3389 (RDP) - Remote access
+
+Protocol Anomalies:
+- DNS queries to suspicious domains
+- HTTP POST requests with encrypted payloads
+- SMB authentication attempts with harvested credentials
+- RDP brute force attacks
+
+TIMELINE OF ACTIVITIES
+2024-04-01 09:15:22 - Initial compromise via spear-phishing email
+2024-04-01 09:32:18 - First-stage payload execution
+2024-04-01 10:45:33 - Lateral movement to domain controller
+2024-04-01 11:23:47 - Credential harvesting initiated
+2024-04-02 08:30:15 - Data exfiltration begins
+2024-04-02 14:22:11 - Additional persistence mechanisms deployed
+2024-04-03 09:15:45 - Second-stage payload execution
+2024-04-03 14:23:45 - Attack detected by SIEM
+
+LESSONS LEARNED
+1. Multi-layered defense approach is essential
+2. Regular security awareness training reduces phishing success
+3. Network segmentation limits lateral movement
+4. Continuous monitoring and threat hunting are critical
+5. Incident response procedures must be regularly tested
+
+RECOMMENDATIONS
+Technical Controls:
+1. Implement network micro-segmentation
+2. Deploy advanced endpoint protection
+3. Enhance logging and monitoring capabilities
+4. Implement zero-trust network access
+5. Regular vulnerability assessments
+
+Administrative Controls:
+1. Enhanced security awareness training
+2. Regular incident response exercises
+3. Cyber threat intelligence integration
+4. Vendor risk management program
+5. Business continuity planning
+
+Physical Controls:
+1. Secure server room access controls
+2. Environmental monitoring systems
+3. Equipment disposal procedures
+4. Visitor access management
+5. Document handling procedures
+
+FUTURE IMPROVEMENTS
+1. Automation of incident response procedures
+2. Integration of threat intelligence feeds
+3. Implementation of deception technologies
+4. Enhanced forensic capabilities
+5. Regular red team exercises

@@ -1,0 +1,494 @@
+{
+  "artifacts": {
+    "artifacts": [
+      {
+        "type": "IP Address",
+        "value": "203.0.113.45",
+        "properties": {
+          "geolocation": "Primary C2",
+          "ip_version": "IPv4"
+        },
+        "context": "Command and Control server",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "198.51.100.78",
+        "properties": {
+          "geolocation": "Secondary C2",
+          "ip_version": "IPv4"
+        },
+        "context": "Command and Control server",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "192.0.2.156",
+        "properties": {
+          "geolocation": "Backup C2",
+          "ip_version": "IPv4"
+        },
+        "context": "Command and Control server",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "203.0.113.89",
+        "properties": {
+          "geolocation": "Exfiltration endpoint",
+          "ip_version": "IPv4"
+        },
+        "context": "Data exfiltration",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "45.67.89.123",
+        "properties": {
+          "geolocation": "United States",
+          "ip_version": "IPv4"
+        },
+        "context": "Geographic distribution",
+        "confidence": "medium"
+      },
+      {
+        "type": "IP Address",
+        "value": "185.220.101.42",
+        "properties": {
+          "geolocation": "Germany",
+          "ip_version": "IPv4"
+        },
+        "context": "Geographic distribution",
+        "confidence": "medium"
+      },
+      {
+        "type": "IP Address",
+        "value": "91.92.240.118",
+        "properties": {
+          "geolocation": "Russia",
+          "ip_version": "IPv4"
+        },
+        "context": "Geographic distribution",
+        "confidence": "medium"
+      },
+      {
+        "type": "IP Address",
+        "value": "123.123.123.123",
+        "properties": {
+          "geolocation": "China",
+          "ip_version": "IPv4"
+        },
+        "context": "Geographic distribution",
+        "confidence": "medium"
+      },
+      {
+        "type": "File Hash",
+        "value": "7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2",
+        "properties": {
+          "hash_type": "SHA256",
+          "file_name": "oauth-consent-app.exe"
+        },
+        "context": "Malicious application",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "a1b2c3d4e5f6789012345678901234ab",
+        "properties": {
+          "hash_type": "MD5",
+          "file_name": "oauth-consent-app.exe"
+        },
+        "context": "Malicious application",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "8a9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+        "properties": {
+          "hash_type": "SHA256",
+          "file_name": "azure-enumeration.ps1"
+        },
+        "context": "PowerShell script",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "b2c3d4e5f6789012345678901234abc",
+        "properties": {
+          "hash_type": "MD5",
+          "file_name": "azure-enumeration.ps1"
+        },
+        "context": "PowerShell script",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "oauth-consent.malicious-apps.com",
+        "properties": {
+          "tld": "com"
+        },
+        "context": "Suspicious domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "microsoft-verification.fake-domain.net",
+        "properties": {
+          "tld": "net"
+        },
+        "context": "Suspicious domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "azure-signin.phishing-site.org",
+        "properties": {
+          "tld": "org"
+        },
+        "context": "Suspicious domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "office365-login.suspicious-domain.info",
+        "properties": {
+          "tld": "info"
+        },
+        "context": "Suspicious domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Email Address",
+        "value": "compromised-user@example.com",
+        "properties": {
+          "domain": "example.com"
+        },
+        "context": "Compromised user account",
+        "confidence": "medium"
+      },
+      {
+        "type": "File Path",
+        "value": "C:\\Program Files\\Microsoft Graph API\\graph-helper.exe",
+        "properties": {
+          "system_context": "Windows"
+        },
+        "context": "Malicious service binary",
+        "confidence": "high"
+      },
+      {
+        "type": "File Path",
+        "value": "C:\\Program Files\\Microsoft Graph API\\graph-api-client.exe",
+        "properties": {
+          "system_context": "Windows"
+        },
+        "context": "Malicious process binary",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "graph-api-client.exe",
+        "properties": {
+          "pid": "1234",
+          "command_line": "C:\\Program Files\\Microsoft Graph API\\graph-api-client.exe --silent --token-file=token.json"
+        },
+        "context": "Malicious process",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\16.0\\Common\\Identity\\EnableADAL",
+        "properties": {
+          "hive": "HKEY_CURRENT_USER"
+        },
+        "context": "Persistence registry entry",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI\\CredUI",
+        "properties": {
+          "hive": "HKEY_LOCAL_MACHINE"
+        },
+        "context": "Persistence registry entry",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Zones",
+        "properties": {
+          "hive": "HKEY_CURRENT_USER"
+        },
+        "context": "Persistence registry entry",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "T1078.004",
+        "properties": {
+          "technique_name": "Valid Accounts: Cloud Accounts",
+          "tactic": "Initial Access"
+        },
+        "context": "Initial access technique",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "T1566.001",
+        "properties": {
+          "technique_name": "Phishing: Spearphishing Attachment",
+          "tactic": "Initial Access"
+        },
+        "context": "Initial access technique",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "T1190",
+        "properties": {
+          "technique_name": "Exploit Public-Facing Application",
+          "tactic": "Initial Access"
+        },
+        "context": "Initial access technique",
+        "confidence": "high"
+      },
+      {
+        "type": "Network Port",
+        "value": "443",
+        "properties": {
+          "protocol": "HTTPS",
+          "service": "Microsoft Graph API"
+        },
+        "context": "Network communication",
+        "confidence": "medium"
+      },
+      {
+        "type": "User Account",
+        "value": "compromised-user",
+        "properties": {
+          "privilege_level": "Standard",
+          "domain": "example.com"
+        },
+        "context": "Compromised user account",
+        "confidence": "medium"
+      },
+      {
+        "type": "Timestamp",
+        "value": "2024-05-11T14:30:00Z",
+        "properties": {
+          "timezone": "UTC"
+        },
+        "context": "Access token expiration",
+        "confidence": "high"
+      }
+    ],
+    "extraction_metadata": {
+      "total_artifacts": 34,
+      "high_confidence": 24,
+      "medium_confidence": 8,
+      "low_confidence": 2
+    }
+  },
+  "reasoning_and_mapping": {
+    "reasoning_chains": [
+      {
+        "artifact_id": "IP Address: 203.0.113.45",
+        "artifact": {
+          "type": "IP Address",
+          "value": "203.0.113.45",
+          "properties": {
+            "geolocation": "Primary C2",
+            "ip_version": "IPv4"
+          },
+          "context": "Command and Control server",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This IP address is identified as a Primary C2 server, which suggests it is used for command and control communications.",
+            "conclusion": "The technical function of this artifact is to facilitate command and control communications."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The presence of a C2 server suggests that the attacker is using this IP address to maintain persistence and control over compromised systems.",
+            "conclusion": "The attack tactic supported by this artifact is Persistence."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Persistence",
+          "technique": "Command and Control",
+          "phase": "Maintenance",
+          "confidence": "high",
+          "explicit_justification": "The IP address is identified as a Primary C2 server, which suggests it is used for command and control communications, indicating the attacker is maintaining persistence and control over compromised systems."
+        }
+      },
+      {
+        "artifact_id": "File Hash: 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2",
+        "artifact": {
+          "type": "File Hash",
+          "value": "7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2",
+          "properties": {
+            "hash_type": "SHA256",
+            "file_name": "oauth-consent-app.exe"
+          },
+          "context": "Malicious application",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This file hash is associated with a malicious application, suggesting it is used for initial access or execution.",
+            "conclusion": "The technical function of this artifact is to facilitate initial access or execution."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The presence of a malicious application suggests that the attacker is using this file hash to gain initial access to a system or execute malicious code.",
+            "conclusion": "The attack tactic supported by this artifact is Initial Access."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Initial Access",
+          "technique": "Malicious Application",
+          "phase": "Execution",
+          "confidence": "high",
+          "explicit_justification": "The file hash is associated with a malicious application, suggesting it is used for initial access or execution, indicating the attacker is using this file hash to gain initial access to a system or execute malicious code."
+        }
+      },
+      {
+        "artifact_id": "Domain Name: oauth-consent.malicious-apps.com",
+        "artifact": {
+          "type": "Domain Name",
+          "value": "oauth-consent.malicious-apps.com",
+          "properties": {
+            "tld": "com"
+          },
+          "context": "Suspicious domain",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This domain name is identified as suspicious, suggesting it is used for phishing or other social engineering tactics.",
+            "conclusion": "The technical function of this artifact is to facilitate social engineering attacks."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The presence of a suspicious domain suggests that the attacker is using this domain name to trick users into revealing sensitive information or gaining initial access.",
+            "conclusion": "The attack tactic supported by this artifact is Initial Access."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Initial Access",
+          "technique": "Phishing",
+          "phase": "Preparation",
+          "confidence": "high",
+          "explicit_justification": "The domain name is identified as suspicious, suggesting it is used for phishing or other social engineering tactics, indicating the attacker is using this domain name to trick users into revealing sensitive information or gaining initial access."
+        }
+      },
+      {
+        "artifact_id": "MITRE ATT&CK Technique ID: T1078.004",
+        "artifact": {
+          "type": "MITRE ATT&CK Technique ID",
+          "value": "T1078.004",
+          "properties": {
+            "technique_name": "Valid Accounts: Cloud Accounts",
+            "tactic": "Initial Access"
+          },
+          "context": "Initial access technique",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This MITRE ATT&CK technique ID is associated with valid accounts and cloud accounts, suggesting it is used for initial access.",
+            "conclusion": "The technical function of this artifact is to facilitate initial access using valid accounts and cloud accounts."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The presence of this technique ID suggests that the attacker is using valid accounts and cloud accounts to gain initial access to a system or network.",
+            "conclusion": "The attack tactic supported by this artifact is Initial Access."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Initial Access",
+          "technique": "Valid Accounts: Cloud Accounts",
+          "phase": "Preparation",
+          "confidence": "high",
+          "explicit_justification": "The MITRE ATT&CK technique ID is associated with valid accounts and cloud accounts, suggesting it is used for initial access, indicating the attacker is using valid accounts and cloud accounts to gain initial access to a system or network."
+        }
+      }
+    ],
+    "attack_timeline": [
+      {
+        "phase": "Preparation",
+        "tactic": "Initial Access",
+        "technique": "Phishing",
+        "artifacts": [
+          "Domain Name: oauth-consent.malicious-apps.com"
+        ],
+        "chronological_order": 1,
+        "causal_relationships": [
+          "Initial Access"
+        ],
+        "phase_justification": "The attacker uses phishing to trick users into revealing sensitive information or gaining initial access."
+      },
+      {
+        "phase": "Preparation",
+        "tactic": "Initial Access",
+        "technique": "Valid Accounts: Cloud Accounts",
+        "artifacts": [
+          "MITRE ATT&CK Technique ID: T1078.004"
+        ],
+        "chronological_order": 2,
+        "causal_relationships": [
+          "Initial Access"
+        ],
+        "phase_justification": "The attacker uses valid accounts and cloud accounts to gain initial access to a system or network."
+      },
+      {
+        "phase": "Execution",
+        "tactic": "Initial Access",
+        "technique": "Malicious Application",
+        "artifacts": [
+          "File Hash: 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2"
+        ],
+        "chronological_order": 3,
+        "causal_relationships": [
+          "Initial Access"
+        ],
+        "phase_justification": "The attacker uses a malicious application to gain initial access to a system or execute malicious code."
+      },
+      {
+        "phase": "Maintenance",
+        "tactic": "Persistence",
+        "technique": "Command and Control",
+        "artifacts": [
+          "IP Address: 203.0.113.45"
+        ],
+        "chronological_order": 4,
+        "causal_relationships": [
+          "Persistence"
+        ],
+        "phase_justification": "The attacker uses a C2 server to maintain persistence and control over compromised systems."
+      }
+    ],
+    "overall_attack_narrative": "The attacker uses phishing and valid accounts to gain initial access to a system or network. Once inside, the attacker uses a malicious application to execute malicious code and maintain persistence using a C2 server.",
+    "confidence_assessment": {
+      "overall_confidence": "high",
+      "reasoning_quality": "The reasoning process is based on a thorough analysis of the artifacts and their relationships, providing a clear and coherent attack narrative.",
+      "mapping_validation": "The mapping of artifacts to the strategic attack framework is validated through a rigorous reasoning process, ensuring that the attack narrative is accurate and reliable."
+    }
+  },
+  "source_file": "reports/microsoft_threat_intel.txt",
+  "analysis_timestamp": "20251008_093128",
+  "analysis_tool": "Automated Knowledge Acquisition Layer v2.0",
+  "ontology_ready": true
+}

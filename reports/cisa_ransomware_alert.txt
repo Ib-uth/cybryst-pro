@@ -1,0 +1,162 @@
+CYBERSECURITY & INFRASTRUCTURE SECURITY AGENCY
+ALERT (AA24-083A)
+Ransomware Targeting Healthcare and Public Health Sector
+
+Original release date: March 15, 2024
+Last revised: March 20, 2024
+
+SUMMARY
+CISA, the Federal Bureau of Investigation (FBI), and the Department of Health and Human Services (HHS) are releasing this joint Cybersecurity Advisory (CSA) to provide information on Royal and BlackCat ransomware variants actively targeting Healthcare and Public Health (HPH) sector organizations.
+
+TACTICS, TECHNIQUES, AND PROCEDURES (TTPs)
+
+INITIAL ACCESS
+Threat actors gain initial access through:
+- Exploiting vulnerabilities in internet-facing applications
+- Phishing campaigns targeting healthcare staff
+- Compromising remote desktop protocol (RDP) connections
+- Supply chain attacks targeting healthcare software vendors
+
+VULNERABILITIES EXPLOITED
+CVE-2023-23397 - Microsoft Outlook Elevation of Privilege Vulnerability
+CVE-2023-21716 - Microsoft Office Publisher Remote Code Execution Vulnerability
+CVE-2023-0669 - Fortra GoAnywhere MFT Remote Code Execution
+CVE-2023-28252 - Windows Common Log File System Driver Elevation of Privilege
+
+COMMAND AND CONTROL INFRASTRUCTURE
+Primary C2 Domains:
+- medical-data-backup.onion
+- hospital-secure.onion
+- healthcare-crypto.onion
+
+IP Addresses:
+- 45.146.164.110 (Bulgaria)
+- 185.220.101.42 (Germany)
+- 91.92.240.118 (Russia)
+- 198.96.155.3 (United States)
+
+TOR Exit Nodes:
+- 192.42.116.16
+- 51.15.70.167
+- 185.220.101.42
+
+MALWARE INDICATORS
+Royal Ransomware:
+- SHA256: 9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6
+- File Extension: .royal
+- Ransom Note: ROYAL_RECOVERY_README.txt
+
+BlackCat Ransomware:
+- SHA256: 8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5
+- File Extension: .blackcat
+- Ransom Note: BLACKCAT_RECOVERY.txt
+
+AFFILIATED TOOLS
+Cobalt Strike:
+- Beacon Configuration: 203.0.113.100:443
+- Jitter: 30-60 seconds
+- Sleep: 60000ms
+- User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+
+PowerShell Scripts:
+- Invoke-Obfuscation framework
+- Empire framework modules
+- Custom credential harvesting scripts
+
+LIVING OFF THE LAND TECHNIQUES
+Windows Built-in Tools:
+- PowerShell for reconnaissance
+- WMI for lateral movement
+- PsExec for remote execution
+- WMIC for system enumeration
+
+Network Tools:
+- Net use for share mounting
+- Netstat for network enumeration
+- Nslookup for DNS reconnaissance
+- Ping for network connectivity testing
+
+IMPACT ASSESSMENT
+Affected Organizations:
+- 15+ healthcare systems across 8 states
+- 3 major hospital networks
+- 2 medical device manufacturers
+- 1 healthcare software vendor
+
+Data Compromised:
+- Patient health records (PHI)
+- Financial information
+- Employee personal data
+- Medical device configurations
+
+Business Impact:
+- Temporary closure of emergency services
+- Delayed patient care procedures
+- Financial losses exceeding $50M
+- Regulatory compliance violations
+
+MITRE ATT&CK FRAMEWORK
+Initial Access:
+- T1078.003 - Valid Accounts: Local Accounts
+- T1566.001 - Phishing: Spearphishing Attachment
+- T1190 - Exploit Public-Facing Application
+
+Execution:
+- T1059.001 - Command and Scripting Interpreter: PowerShell
+- T1059.003 - Command and Scripting Interpreter: Windows Command Shell
+
+Persistence:
+- T1543.003 - Create or Modify System Process: Windows Service
+- T1053.005 - Scheduled Task/Job: Scheduled Task
+
+Privilege Escalation:
+- T1548.002 - Abuse Elevation Control Mechanism: Bypass User Account Control
+- T1078.002 - Valid Accounts: Domain Accounts
+
+Defense Evasion:
+- T1562.001 - Impair Defenses: Disable or Modify Tools
+- T1027 - Obfuscated Files or Information
+
+Credential Access:
+- T1003.001 - OS Credential Dumping: LSASS Memory
+- T1552.001 - Unsecured Credentials: Credentials in Files
+
+Discovery:
+- T1083 - File and Directory Discovery
+- T1082 - System Information Discovery
+- T1018 - Remote System Discovery
+
+Lateral Movement:
+- T1021.001 - Remote Services: Remote Desktop Protocol
+- T1021.002 - Remote Services: SMB/Windows Admin Shares
+
+Collection:
+- T1005 - Data from Local System
+- T1039 - Data from Network Shared Drive
+
+Command and Control:
+- T1071.001 - Application Layer Protocol: Web Protocols
+- T1573.002 - Encrypted Channel: Asymmetric Cryptography
+
+Exfiltration:
+- T1041 - Exfiltration Over C2 Channel
+- T1048.003 - Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol
+
+Impact:
+- T1486 - Data Encrypted for Impact
+- T1490 - Inhibit System Recovery
+
+RECOMMENDATIONS
+Immediate Actions:
+1. Implement network segmentation
+2. Enable multi-factor authentication
+3. Deploy endpoint detection and response (EDR) solutions
+4. Conduct security awareness training
+5. Implement backup and recovery procedures
+
+Long-term Measures:
+1. Establish incident response capabilities
+2. Implement zero-trust architecture
+3. Regular vulnerability assessments
+4. Security monitoring and logging
+5. Cyber threat intelligence integration

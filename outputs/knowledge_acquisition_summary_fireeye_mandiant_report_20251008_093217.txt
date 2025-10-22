@@ -1,0 +1,34 @@
+AUTOMATED KNOWLEDGE ACQUISITION LAYER - ANALYSIS SUMMARY
+======================================================================
+
+Source File: reports/fireeye_mandiant_report.txt
+Analysis Date: 2025-10-08 09:32:17
+Tool: Automated Knowledge Acquisition Layer v2.0
+
+ATTACK NARRATIVE:
+------------------------------
+The attack begins with the preparation phase, where reconnaissance is conducted using tools like Nmap to gather network information. Initial access is then gained through spearphishing attacks, which involve sending malicious attachments like 'pos_update.exe'. Once access is gained, command and control servers like '45.146.164.110' are used to execute malicious commands. To maintain access, persistence mechanisms such as modifying registry keys are employed, ensuring that malware runs at startup. This narrative outlines a sophisticated attack that leverages various tactics and techniques to compromise and maintain control over a system.
+
+CONFIDENCE ASSESSMENT:
+------------------------------
+Overall Confidence: high
+Reasoning Quality: The reasoning provided is based on a thorough analysis of the artifacts and their roles in the attack lifecycle, considering the tactics, techniques, and phases involved.
+
+STRATEGIC ATTACK FRAMEWORK TIMELINE:
+------------------------------
+
+1. PREPARATION
+   Tactic: Reconnaissance
+   Technique: Network Service Scanning
+
+2. PREPARATION
+   Tactic: Initial Access
+   Technique: Spearphishing Attachment
+
+3. EXECUTION
+   Tactic: Command and Control
+   Technique: Application Window Discovery
+
+4. MAINTENANCE
+   Tactic: Persistence
+   Technique: Registry Run Keys / Startup Folder

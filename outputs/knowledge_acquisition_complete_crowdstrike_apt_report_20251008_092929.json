@@ -1,0 +1,600 @@
+{
+  "artifacts": {
+    "artifacts": [
+      {
+        "type": "IP address",
+        "value": "203.0.113.42",
+        "properties": {
+          "ip_version": "IPv4",
+          "context": "Initial C2"
+        },
+        "context": "Initial compromise",
+        "confidence": "high"
+      },
+      {
+        "type": "IP address",
+        "value": "198.51.100.78",
+        "properties": {
+          "ip_version": "IPv4",
+          "context": "Secondary C2"
+        },
+        "context": "Secondary command and control",
+        "confidence": "high"
+      },
+      {
+        "type": "IP address",
+        "value": "192.0.2.156",
+        "properties": {
+          "ip_version": "IPv4",
+          "context": "Data exfiltration endpoint"
+        },
+        "context": "Data exfiltration",
+        "confidence": "high"
+      },
+      {
+        "type": "File hash",
+        "value": "7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2",
+        "properties": {
+          "hash_type": "SHA256"
+        },
+        "context": "Primary payload",
+        "confidence": "high"
+      },
+      {
+        "type": "File hash",
+        "value": "a1b2c3d4e5f6789012345678901234ab",
+        "properties": {
+          "hash_type": "MD5"
+        },
+        "context": "Primary payload",
+        "confidence": "high"
+      },
+      {
+        "type": "File hash",
+        "value": "8a9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+        "properties": {
+          "hash_type": "SHA256"
+        },
+        "context": "Secondary payload",
+        "confidence": "high"
+      },
+      {
+        "type": "Malware name",
+        "value": "APT29",
+        "properties": {
+          "variant": "Cozy Bear"
+        },
+        "context": "Threat actor",
+        "confidence": "high"
+      },
+      {
+        "type": "Attack tool",
+        "value": "Mimikatz",
+        "properties": {
+          "tool_version": "Unknown",
+          "process": "lsass.exe"
+        },
+        "context": "Credential harvesting",
+        "confidence": "high"
+      },
+      {
+        "type": "Attack tool",
+        "value": "PsExec",
+        "properties": {
+          "tool_version": "Unknown"
+        },
+        "context": "Remote execution",
+        "confidence": "high"
+      },
+      {
+        "type": "Attack tool",
+        "value": "BloodHound",
+        "properties": {
+          "tool_version": "Unknown"
+        },
+        "context": "AD enumeration",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry key",
+        "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender",
+        "properties": {
+          "hive": "HKEY_CURRENT_USER"
+        },
+        "context": "Persistence mechanism",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry key",
+        "value": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell",
+        "properties": {
+          "hive": "HKEY_LOCAL_MACHINE"
+        },
+        "context": "Persistence mechanism",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry key",
+        "value": "HKEY_CURRENT_USER\\Software\\Classes\\CLSID\\{12345678-1234-1234-1234-123456789ABC}",
+        "properties": {
+          "hive": "HKEY_CURRENT_USER"
+        },
+        "context": "Persistence mechanism",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain name",
+        "value": "secure-docs.malicious-domain.org",
+        "properties": {
+          "tld": ".org"
+        },
+        "context": "C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain name",
+        "value": "api-gateway.suspicious-site.net",
+        "properties": {
+          "tld": ".net"
+        },
+        "context": "C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain name",
+        "value": "backup-storage.evil-corp.info",
+        "properties": {
+          "tld": ".info"
+        },
+        "context": "C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Email address",
+        "value": "admin@corp.internal",
+        "properties": {
+          "domain": "corp.internal"
+        },
+        "context": "Domain admin credential",
+        "confidence": "high"
+      },
+      {
+        "type": "Email address",
+        "value": "svc_backup@corp.internal",
+        "properties": {
+          "domain": "corp.internal"
+        },
+        "context": "Service account credential",
+        "confidence": "high"
+      },
+      {
+        "type": "Email address",
+        "value": "administrator@workstation-01",
+        "properties": {
+          "domain": "workstation-01"
+        },
+        "context": "Local admin credential",
+        "confidence": "high"
+      },
+      {
+        "type": "File path",
+        "value": "%TEMP%\\system_update.exe",
+        "properties": {
+          "system_context": "Temp directory"
+        },
+        "context": "Primary payload",
+        "confidence": "high"
+      },
+      {
+        "type": "File path",
+        "value": "%APPDATA%\\Microsoft\\Windows\\Themes\\wallpaper.dll",
+        "properties": {
+          "system_context": "AppData directory"
+        },
+        "context": "Secondary payload",
+        "confidence": "high"
+      },
+      {
+        "type": "Process name",
+        "value": "lsass.exe",
+        "properties": {
+          "execution_context": "Credential harvesting"
+        },
+        "context": "Mimikatz execution",
+        "confidence": "high"
+      },
+      {
+        "type": "Network port",
+        "value": "443",
+        "properties": {
+          "protocol": "tcp",
+          "service_context": "HTTPS C2"
+        },
+        "context": "C2 communication",
+        "confidence": "high"
+      },
+      {
+        "type": "Network port",
+        "value": "8080",
+        "properties": {
+          "protocol": "tcp",
+          "service_context": "HTTP tunneling"
+        },
+        "context": "C2 communication",
+        "confidence": "high"
+      },
+      {
+        "type": "Network port",
+        "value": "53",
+        "properties": {
+          "protocol": "udp",
+          "service_context": "DNS tunneling"
+        },
+        "context": "C2 communication",
+        "confidence": "high"
+      },
+      {
+        "type": "User account",
+        "value": "admin",
+        "properties": {
+          "privilege_level": "Domain Admin",
+          "domain": "corp.internal"
+        },
+        "context": "Domain admin credential",
+        "confidence": "high"
+      },
+      {
+        "type": "User account",
+        "value": "svc_backup",
+        "properties": {
+          "privilege_level": "Service Account",
+          "domain": "corp.internal"
+        },
+        "context": "Service account credential",
+        "confidence": "high"
+      },
+      {
+        "type": "User account",
+        "value": "administrator",
+        "properties": {
+          "privilege_level": "Local Admin",
+          "domain": "workstation-01"
+        },
+        "context": "Local admin credential",
+        "confidence": "high"
+      },
+      {
+        "type": "Timestamp",
+        "value": "2024-02-01 03:15:22 UTC",
+        "properties": {
+          "timezone": "UTC"
+        },
+        "context": "Initial compromise",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1566.001",
+        "properties": {
+          "ttp_reference": "Phishing: Spearphishing Attachment"
+        },
+        "context": "Initial compromise",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1055",
+        "properties": {
+          "ttp_reference": "Process Injection"
+        },
+        "context": "Persistence mechanism",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1071.001",
+        "properties": {
+          "ttp_reference": "Application Layer Protocol: Web Protocols"
+        },
+        "context": "C2 communication",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1083",
+        "properties": {
+          "ttp_reference": "File and Directory Discovery"
+        },
+        "context": "Lateral movement",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1082",
+        "properties": {
+          "ttp_reference": "System Information Discovery"
+        },
+        "context": "Lateral movement",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1003.001",
+        "properties": {
+          "ttp_reference": "OS Credential Dumping: LSASS Memory"
+        },
+        "context": "Credential harvesting",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1078.002",
+        "properties": {
+          "ttp_reference": "Valid Accounts: Domain Accounts"
+        },
+        "context": "Lateral movement",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1021.002",
+        "properties": {
+          "ttp_reference": "Remote Services: SMB/Windows Admin Shares"
+        },
+        "context": "Lateral movement",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1041",
+        "properties": {
+          "ttp_reference": "Exfiltration Over C2 Channel"
+        },
+        "context": "Data exfiltration",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK technique ID",
+        "value": "T1070.004",
+        "properties": {
+          "ttp_reference": "Indicator Removal: File Deletion"
+        },
+        "context": "Evasion technique",
+        "confidence": "high"
+      }
+    ],
+    "extraction_metadata": {
+      "total_artifacts": 43,
+      "high_confidence": 43,
+      "medium_confidence": 0,
+      "low_confidence": 0
+    }
+  },
+  "reasoning_and_mapping": {
+    "reasoning_chains": [
+      {
+        "artifact_id": "IP address: 203.0.113.42",
+        "artifact": {
+          "type": "IP address",
+          "value": "203.0.113.42",
+          "properties": {
+            "ip_version": "IPv4",
+            "context": "Initial C2"
+          },
+          "context": "Initial compromise",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This IP address is associated with the initial compromise of the system, suggesting it is a Command and Control (C2) server.",
+            "conclusion": "The IP address 203.0.113.42 is a C2 server."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The IP address supports the Initial Access tactic, as it is the initial point of contact for the attacker.",
+            "conclusion": "The IP address 203.0.113.42 supports the Initial Access tactic."
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The IP address implements the T1566.001 technique, which is Phishing: Spearphishing Attachment, as indicated by the MITRE ATT&CK technique ID.",
+            "conclusion": "The IP address 203.0.113.42 implements the T1566.001 technique."
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The IP address is associated with the Initial Access phase, as it is the initial point of contact for the attacker.",
+            "conclusion": "The IP address 203.0.113.42 is associated with the Initial Access phase."
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The IP address is likely the first point of contact for the attacker, and is followed by the execution of the primary payload.",
+            "conclusion": "The IP address 203.0.113.42 is the first point of contact for the attacker."
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The IP address is mapped to the Initial Access tactic and T1566.001 technique based on its association with the initial compromise of the system and the MITRE ATT&CK technique ID.",
+            "conclusion": "The IP address 203.0.113.42 is explicitly justified as being associated with the Initial Access tactic and T1566.001 technique."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Initial Access",
+          "technique": "T1566.001",
+          "phase": "Initial Access",
+          "confidence": "high",
+          "explicit_justification": "The IP address 203.0.113.42 is associated with the initial compromise of the system and is mapped to the Initial Access tactic and T1566.001 technique based on the MITRE ATT&CK technique ID."
+        }
+      },
+      {
+        "artifact_id": "File hash: 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2",
+        "artifact": {
+          "type": "File hash",
+          "value": "7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2",
+          "properties": {
+            "hash_type": "SHA256"
+          },
+          "context": "Primary payload",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This file hash is associated with the primary payload, suggesting it is a malicious executable.",
+            "conclusion": "The file hash 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2 is a malicious executable."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The file hash supports the Execution tactic, as it is a malicious executable.",
+            "conclusion": "The file hash 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2 supports the Execution tactic."
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The file hash implements the T1204 technique, which is User Execution, as it is a malicious executable.",
+            "conclusion": "The file hash 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2 implements the T1204 technique."
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The file hash is associated with the Execution phase, as it is a malicious executable.",
+            "conclusion": "The file hash 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2 is associated with the Execution phase."
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The file hash is likely executed after the initial access, and is followed by the establishment of persistence.",
+            "conclusion": "The file hash 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2 is executed after the initial access."
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The file hash is mapped to the Execution tactic and T1204 technique based on its association with the primary payload and the MITRE ATT&CK technique ID.",
+            "conclusion": "The file hash 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2 is explicitly justified as being associated with the Execution tactic and T1204 technique."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Execution",
+          "technique": "T1204",
+          "phase": "Execution",
+          "confidence": "high",
+          "explicit_justification": "The file hash 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2 is associated with the primary payload and is mapped to the Execution tactic and T1204 technique based on the MITRE ATT&CK technique ID."
+        }
+      },
+      {
+        "artifact_id": "Registry key: HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender",
+        "artifact": {
+          "type": "Registry key",
+          "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender",
+          "properties": {
+            "hive": "HKEY_CURRENT_USER"
+          },
+          "context": "Persistence mechanism",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This registry key is associated with the persistence mechanism, suggesting it is used to maintain access to the system.",
+            "conclusion": "The registry key HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender is used for persistence."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The registry key supports the Persistence tactic, as it is used to maintain access to the system.",
+            "conclusion": "The registry key HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender supports the Persistence tactic."
+          },
+          {
+            "step": 3,
+            "question": "What specific technique does it implement?",
+            "analysis": "The registry key implements the T1050 technique, which is New Service, as it is used to maintain access to the system.",
+            "conclusion": "The registry key HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender implements the T1050 technique."
+          },
+          {
+            "step": 4,
+            "question": "What phase of the attack lifecycle is this?",
+            "analysis": "The registry key is associated with the Persistence phase, as it is used to maintain access to the system.",
+            "conclusion": "The registry key HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender is associated with the Persistence phase."
+          },
+          {
+            "step": 5,
+            "question": "How does it relate to other artifacts chronologically?",
+            "analysis": "The registry key is likely established after the initial access and execution, and is used to maintain access to the system.",
+            "conclusion": "The registry key HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender is established after the initial access and execution."
+          },
+          {
+            "step": 6,
+            "question": "What is the explicit justification for this mapping?",
+            "analysis": "The registry key is mapped to the Persistence tactic and T1050 technique based on its association with the persistence mechanism and the MITRE ATT&CK technique ID.",
+            "conclusion": "The registry key HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender is explicitly justified as being associated with the Persistence tactic and T1050 technique."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Persistence",
+          "technique": "T1050",
+          "phase": "Persistence",
+          "confidence": "high",
+          "explicit_justification": "The registry key HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender is associated with the persistence mechanism and is mapped to the Persistence tactic and T1050 technique based on the MITRE ATT&CK technique ID."
+        }
+      }
+    ],
+    "attack_timeline": [
+      {
+        "phase": "Initial Access",
+        "tactic": "Initial Access",
+        "technique": "T1566.001",
+        "artifacts": [
+          "IP address: 203.0.113.42"
+        ],
+        "chronological_order": 1,
+        "causal_relationships": [
+          "Execution"
+        ],
+        "phase_justification": "The initial access phase is the first stage of the attack lifecycle, where the attacker gains initial access to the system."
+      },
+      {
+        "phase": "Execution",
+        "tactic": "Execution",
+        "technique": "T1204",
+        "artifacts": [
+          "File hash: 7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2"
+        ],
+        "chronological_order": 2,
+        "causal_relationships": [
+          "Persistence"
+        ],
+        "phase_justification": "The execution phase is the second stage of the attack lifecycle, where the attacker executes the primary payload."
+      },
+      {
+        "phase": "Persistence",
+        "tactic": "Persistence",
+        "technique": "T1050",
+        "artifacts": [
+          "Registry key: HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender"
+        ],
+        "chronological_order": 3,
+        "causal_relationships": [
+          "Lateral Movement"
+        ],
+        "phase_justification": "The persistence phase is the third stage of the attack lifecycle, where the attacker establishes persistence on the system."
+      }
+    ],
+    "overall_attack_narrative": "The attack begins with the initial access phase, where the attacker gains initial access to the system through a phishing campaign (T1566.001). The attacker then executes the primary payload (T1204), which establishes persistence on the system (T1050). The attacker then uses the persistence mechanism to maintain access to the system and move laterally within the network.",
+    "confidence_assessment": {
+      "overall_confidence": "high",
+      "reasoning_quality": "The reasoning quality is high, as the attack timeline and artifact mappings are well-supported by the evidence.",
+      "mapping_validation": "The mapping validation is high, as the artifact mappings are consistent with the MITRE ATT&CK framework and the attack timeline."
+    }
+  },
+  "source_file": "reports/crowdstrike_apt_report.txt",
+  "analysis_timestamp": "20251008_092929",
+  "analysis_tool": "Automated Knowledge Acquisition Layer v2.0",
+  "ontology_ready": true
+}

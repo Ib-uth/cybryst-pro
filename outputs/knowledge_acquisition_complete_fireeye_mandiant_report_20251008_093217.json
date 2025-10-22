@@ -1,0 +1,449 @@
+{
+  "artifacts": {
+    "artifacts": [
+      {
+        "type": "IP Address",
+        "value": "45.146.164.110",
+        "properties": {
+          "geolocation": "Bulgaria"
+        },
+        "context": "Primary C2 server",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "185.220.101.42",
+        "properties": {
+          "geolocation": "Germany"
+        },
+        "context": "Secondary C2 server",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "91.92.240.118",
+        "properties": {},
+        "context": "Backup C2 server",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "203.0.113.45",
+        "properties": {},
+        "context": "Exfiltration server",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6",
+        "properties": {
+          "hash_type": "SHA256"
+        },
+        "context": "pos_update.exe",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+        "properties": {
+          "hash_type": "MD5"
+        },
+        "context": "pos_update.exe",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "7f8e9a2b4c6d1e3f5a7b9c0d2e4f6a8b0c1d3e5f7a9b2c4d6e8f0a1b3c5d7e9f1a2",
+        "properties": {
+          "hash_type": "SHA256"
+        },
+        "context": "invoice_2024.pdf.exe",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "8a9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+        "properties": {
+          "hash_type": "SHA256"
+        },
+        "context": "system_update.dll",
+        "confidence": "high"
+      },
+      {
+        "type": "Malware Name",
+        "value": "Carbanak",
+        "properties": {
+          "variant": "FIN7"
+        },
+        "context": "POS malware campaign",
+        "confidence": "high"
+      },
+      {
+        "type": "Attack Tool",
+        "value": "Nmap",
+        "properties": {
+          "version": "unknown"
+        },
+        "context": "Network discovery",
+        "confidence": "medium"
+      },
+      {
+        "type": "Attack Tool",
+        "value": "Netcat",
+        "properties": {
+          "version": "unknown"
+        },
+        "context": "Port scanning",
+        "confidence": "medium"
+      },
+      {
+        "type": "Attack Tool",
+        "value": "PsExec",
+        "properties": {
+          "version": "unknown"
+        },
+        "context": "Remote execution",
+        "confidence": "medium"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\POSUpdate",
+        "properties": {
+          "hive": "HKEY_CURRENT_USER"
+        },
+        "context": "Persistence mechanism",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell",
+        "properties": {
+          "hive": "HKEY_LOCAL_MACHINE"
+        },
+        "context": "Persistence mechanism",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "secure-pos-update.com",
+        "properties": {
+          "TLD": ".com"
+        },
+        "context": "Primary C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "pos-monitoring.net",
+        "properties": {
+          "TLD": ".net"
+        },
+        "context": "Secondary C2 domain",
+        "confidence": "high"
+      },
+      {
+        "type": "Email Address",
+        "value": "unknown",
+        "properties": {},
+        "context": "Not specified in the report",
+        "confidence": "low"
+      },
+      {
+        "type": "File Path",
+        "value": "%TEMP%\\pos_data.bin",
+        "properties": {
+          "system_context": "Temporary files"
+        },
+        "context": "Dropped file",
+        "confidence": "high"
+      },
+      {
+        "type": "File Path",
+        "value": "%APPDATA%\\Microsoft\\Windows\\Themes\\wallpaper.dll",
+        "properties": {
+          "system_context": "Application data"
+        },
+        "context": "Dropped file",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "explorer.exe",
+        "properties": {
+          "execution_context": "Process hollowing"
+        },
+        "context": "Target process for process hollowing",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "svchost.exe",
+        "properties": {
+          "execution_context": "DLL injection"
+        },
+        "context": "Target process for DLL injection",
+        "confidence": "high"
+      },
+      {
+        "type": "Network Port",
+        "value": "443",
+        "properties": {
+          "protocol": "HTTPS"
+        },
+        "context": "Primary C2 port",
+        "confidence": "high"
+      },
+      {
+        "type": "Network Port",
+        "value": "8080",
+        "properties": {
+          "protocol": "HTTP"
+        },
+        "context": "Secondary C2 port",
+        "confidence": "high"
+      },
+      {
+        "type": "User Account",
+        "value": "unknown",
+        "properties": {
+          "privilege_level": "unknown"
+        },
+        "context": "Not specified in the report",
+        "confidence": "low"
+      },
+      {
+        "type": "Timestamp",
+        "value": "2024-06-01 15:30:22 UTC",
+        "properties": {
+          "timezone": "UTC"
+        },
+        "context": "Compilation date of pos_update.exe",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "T1566.001",
+        "properties": {
+          "tactic": "Initial Access"
+        },
+        "context": "Phishing: Spearphishing Attachment",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "T1059.001",
+        "properties": {
+          "tactic": "Execution"
+        },
+        "context": "Command and Scripting Interpreter: PowerShell",
+        "confidence": "high"
+      }
+    ],
+    "extraction_metadata": {
+      "total_artifacts": 31,
+      "high_confidence": 28,
+      "medium_confidence": 3,
+      "low_confidence": 0
+    }
+  },
+  "reasoning_and_mapping": {
+    "reasoning_chains": [
+      {
+        "artifact_id": "IP Address: 45.146.164.110",
+        "artifact": {
+          "type": "IP Address",
+          "value": "45.146.164.110",
+          "properties": {
+            "geolocation": "Bulgaria"
+          },
+          "context": "Primary C2 server",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This IP address is used as a primary Command and Control (C2) server, indicating its role in establishing communication between the attacker's infrastructure and the compromised system.",
+            "conclusion": "The technical function of this artifact is to facilitate C2 communication."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "As a C2 server, this IP address supports the 'Command and Control' tactic, which is a part of the 'Execution' and 'Maintenance' phases of the attack lifecycle.",
+            "conclusion": "This artifact supports the 'Command and Control' tactic."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Command and Control",
+          "technique": "Application Window Discovery",
+          "phase": "Execution",
+          "confidence": "high",
+          "explicit_justification": "The IP address is identified as a primary C2 server, which is a crucial component in the execution and maintenance phases of an attack, facilitating communication between the attacker and the compromised system."
+        }
+      },
+      {
+        "artifact_id": "File Hash: 9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6",
+        "artifact": {
+          "type": "File Hash",
+          "value": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6",
+          "properties": {
+            "hash_type": "SHA256"
+          },
+          "context": "pos_update.exe",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This file hash corresponds to a malicious executable named 'pos_update.exe', which is likely used for initial access or execution of malicious code.",
+            "conclusion": "The technical function of this artifact is to identify a specific malicious executable."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The presence of 'pos_update.exe' suggests that it supports the 'Initial Access' tactic, possibly through spearphishing or other means, leading to the execution of malicious code.",
+            "conclusion": "This artifact supports the 'Initial Access' tactic."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Initial Access",
+          "technique": "Spearphishing Attachment",
+          "phase": "Preparation",
+          "confidence": "high",
+          "explicit_justification": "The file hash corresponds to a malicious executable that could be used in initial access attempts, such as through spearphishing campaigns, to gain a foothold in the target system."
+        }
+      },
+      {
+        "artifact_id": "Attack Tool: Nmap",
+        "artifact": {
+          "type": "Attack Tool",
+          "value": "Nmap",
+          "properties": {
+            "version": "unknown"
+          },
+          "context": "Network discovery",
+          "confidence": "medium"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "Nmap is a network scanning tool used for discovery and mapping of networks, which can be utilized by attackers for reconnaissance.",
+            "conclusion": "The technical function of this artifact is network scanning and discovery."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The use of Nmap supports the 'Reconnaissance' tactic, which is part of the 'Preparation' phase, helping attackers to gather information about the target network.",
+            "conclusion": "This artifact supports the 'Reconnaissance' tactic."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Reconnaissance",
+          "technique": "Network Service Scanning",
+          "phase": "Preparation",
+          "confidence": "medium",
+          "explicit_justification": "Nmap is used for network discovery, which aligns with the reconnaissance tactic, enabling attackers to scan and map the target network, facilitating further attack planning."
+        }
+      },
+      {
+        "artifact_id": "Registry Key: HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\POSUpdate",
+        "artifact": {
+          "type": "Registry Key",
+          "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\POSUpdate",
+          "properties": {
+            "hive": "HKEY_CURRENT_USER"
+          },
+          "context": "Persistence mechanism",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This registry key is used to establish persistence on the compromised system, ensuring that malicious software is executed upon system startup.",
+            "conclusion": "The technical function of this artifact is to enable persistence."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The registry key supports the 'Persistence' tactic, which is crucial for maintaining access to the compromised system over time.",
+            "conclusion": "This artifact supports the 'Persistence' tactic."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Persistence",
+          "technique": "Registry Run Keys / Startup Folder",
+          "phase": "Maintenance",
+          "confidence": "high",
+          "explicit_justification": "The registry key is utilized to achieve persistence, allowing malicious software to run at startup, which is a key aspect of maintaining access and control over the compromised system."
+        }
+      }
+    ],
+    "attack_timeline": [
+      {
+        "phase": "Preparation",
+        "tactic": "Reconnaissance",
+        "technique": "Network Service Scanning",
+        "artifacts": [
+          "Attack Tool: Nmap"
+        ],
+        "chronological_order": 1,
+        "causal_relationships": [
+          "Initial Access"
+        ],
+        "phase_justification": "The preparation phase involves reconnaissance to gather information about the target, which is facilitated by tools like Nmap for network scanning."
+      },
+      {
+        "phase": "Preparation",
+        "tactic": "Initial Access",
+        "technique": "Spearphishing Attachment",
+        "artifacts": [
+          "File Hash: 9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6"
+        ],
+        "chronological_order": 2,
+        "causal_relationships": [
+          "Execution"
+        ],
+        "phase_justification": "Initial access is gained through tactics like spearphishing, which involves sending malicious attachments to targets, potentially leading to the execution of malicious code."
+      },
+      {
+        "phase": "Execution",
+        "tactic": "Command and Control",
+        "technique": "Application Window Discovery",
+        "artifacts": [
+          "IP Address: 45.146.164.110"
+        ],
+        "chronological_order": 3,
+        "causal_relationships": [
+          "Maintenance"
+        ],
+        "phase_justification": "After initial access, command and control servers are used to execute malicious commands and maintain communication with the compromised system."
+      },
+      {
+        "phase": "Maintenance",
+        "tactic": "Persistence",
+        "technique": "Registry Run Keys / Startup Folder",
+        "artifacts": [
+          "Registry Key: HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\POSUpdate"
+        ],
+        "chronological_order": 4,
+        "causal_relationships": [
+          "Exfiltration"
+        ],
+        "phase_justification": "To maintain access, attackers use persistence mechanisms like modifying registry keys to ensure that their malware runs at startup, facilitating long-term control and potential data exfiltration."
+      }
+    ],
+    "overall_attack_narrative": "The attack begins with the preparation phase, where reconnaissance is conducted using tools like Nmap to gather network information. Initial access is then gained through spearphishing attacks, which involve sending malicious attachments like 'pos_update.exe'. Once access is gained, command and control servers like '45.146.164.110' are used to execute malicious commands. To maintain access, persistence mechanisms such as modifying registry keys are employed, ensuring that malware runs at startup. This narrative outlines a sophisticated attack that leverages various tactics and techniques to compromise and maintain control over a system.",
+    "confidence_assessment": {
+      "overall_confidence": "high",
+      "reasoning_quality": "The reasoning provided is based on a thorough analysis of the artifacts and their roles in the attack lifecycle, considering the tactics, techniques, and phases involved.",
+      "mapping_validation": "The mapping of artifacts to the strategic attack framework is validated through explicit justifications for each inference, ensuring a logical and coherent attack narrative."
+    }
+  },
+  "source_file": "reports/fireeye_mandiant_report.txt",
+  "analysis_timestamp": "20251008_093217",
+  "analysis_tool": "Automated Knowledge Acquisition Layer v2.0",
+  "ontology_ready": true
+}

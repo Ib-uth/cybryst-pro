@@ -1,0 +1,530 @@
+{
+  "artifacts": {
+    "artifacts": [
+      {
+        "type": "IP Address",
+        "value": "192.168.10.50",
+        "properties": {
+          "ip_version": "IPv4"
+        },
+        "context": "Manufacturing Execution System (MES): SRV-MES-01",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "192.168.20.100",
+        "properties": {
+          "ip_version": "IPv4"
+        },
+        "context": "Industrial Control System (ICS): PLC-001",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "192.168.10.25",
+        "properties": {
+          "ip_version": "IPv4"
+        },
+        "context": "Database Server: SRV-DB-01",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "192.168.10.1",
+        "properties": {
+          "ip_version": "IPv4"
+        },
+        "context": "Domain Controller: DC-01",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "203.0.113.45",
+        "properties": {
+          "ip_version": "IPv4",
+          "port": "443",
+          "protocol": "HTTPS"
+        },
+        "context": "Primary Command and Control Infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "198.51.100.89",
+        "properties": {
+          "ip_version": "IPv4",
+          "port": "8080",
+          "protocol": "HTTP"
+        },
+        "context": "Secondary Command and Control Infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "IP Address",
+        "value": "192.0.2.78",
+        "properties": {
+          "ip_version": "IPv4",
+          "port": "53",
+          "protocol": "DNS"
+        },
+        "context": "Backup Command and Control Infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0",
+        "properties": {
+          "hash_type": "SHA256"
+        },
+        "context": "Primary Payload: system_update.exe",
+        "confidence": "high"
+      },
+      {
+        "type": "File Hash",
+        "value": "5d41402abc4b2a76b9719d911017c592",
+        "properties": {
+          "hash_type": "MD5"
+        },
+        "context": "Primary Payload: system_update.exe",
+        "confidence": "high"
+      },
+      {
+        "type": "Malware Name",
+        "value": "system_update.exe",
+        "properties": {
+          "file_path": "%TEMP%\\system_update.exe",
+          "file_size": "2048576 bytes"
+        },
+        "context": "Primary Payload",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "secure-upload.legitimate-looking.com",
+        "properties": {
+          "tld": ".com"
+        },
+        "context": "Command and Control Infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "api-gateway.trusted-service.net",
+        "properties": {
+          "tld": ".net"
+        },
+        "context": "Command and Control Infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "Domain Name",
+        "value": "backup-storage.cloud-provider.org",
+        "properties": {
+          "tld": ".org"
+        },
+        "context": "Command and Control Infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "Email Address",
+        "value": "None",
+        "properties": {},
+        "context": "No email addresses found in the incident report",
+        "confidence": "low"
+      },
+      {
+        "type": "File Path",
+        "value": "%TEMP%\\system_update.exe",
+        "properties": {
+          "system_context": "Temporary directory"
+        },
+        "context": "Primary Payload",
+        "confidence": "high"
+      },
+      {
+        "type": "File Path",
+        "value": "%APPDATA%\\Microsoft\\Windows\\Themes\\wallpaper.dll",
+        "properties": {
+          "system_context": "Application data directory"
+        },
+        "context": "Dropped File",
+        "confidence": "high"
+      },
+      {
+        "type": "File Path",
+        "value": "%PROGRAMDATA%\\Windows\\System32\\drivers\\update.sys",
+        "properties": {
+          "system_context": "Program data directory"
+        },
+        "context": "Dropped File",
+        "confidence": "high"
+      },
+      {
+        "type": "File Path",
+        "value": "%WINDOWS%\\System32\\config\\systemprofile\\Desktop\\readme.txt",
+        "properties": {
+          "system_context": "Windows system directory"
+        },
+        "context": "Dropped File",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsDefender",
+        "properties": {
+          "hive": "HKEY_CURRENT_USER"
+        },
+        "context": "Registry Modification",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell",
+        "properties": {
+          "hive": "HKEY_LOCAL_MACHINE"
+        },
+        "context": "Registry Modification",
+        "confidence": "high"
+      },
+      {
+        "type": "Registry Key",
+        "value": "HKEY_CURRENT_USER\\Software\\Classes\\CLSID\\{87654321-4321-4321-4321-210987654321}",
+        "properties": {
+          "hive": "HKEY_CURRENT_USER"
+        },
+        "context": "Registry Modification",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "svchost.exe",
+        "properties": {
+          "pid": "1234",
+          "parent_pid": "5678",
+          "command_line": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p -s NlaSvc"
+        },
+        "context": "Malicious Process",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "explorer.exe",
+        "properties": {
+          "pid": "2345"
+        },
+        "context": "Injected Process",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "winlogon.exe",
+        "properties": {
+          "pid": "3456"
+        },
+        "context": "Injected Process",
+        "confidence": "high"
+      },
+      {
+        "type": "Process Name",
+        "value": "lsass.exe",
+        "properties": {
+          "pid": "4567"
+        },
+        "context": "Injected Process",
+        "confidence": "high"
+      },
+      {
+        "type": "Network Port",
+        "value": "443",
+        "properties": {
+          "protocol": "HTTPS"
+        },
+        "context": "Primary Command and Control Infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "Network Port",
+        "value": "8080",
+        "properties": {
+          "protocol": "HTTP"
+        },
+        "context": "Secondary Command and Control Infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "Network Port",
+        "value": "53",
+        "properties": {
+          "protocol": "DNS"
+        },
+        "context": "Backup Command and Control Infrastructure",
+        "confidence": "high"
+      },
+      {
+        "type": "User Account",
+        "value": "None",
+        "properties": {},
+        "context": "No user accounts found in the incident report",
+        "confidence": "low"
+      },
+      {
+        "type": "Timestamp",
+        "value": "2024-04-03 14:23:45",
+        "properties": {
+          "timezone": "UTC"
+        },
+        "context": "Initial Detection",
+        "confidence": "high"
+      },
+      {
+        "type": "MITRE ATT&CK Technique ID",
+        "value": "None",
+        "properties": {},
+        "context": "No MITRE ATT&CK technique IDs found in the incident report",
+        "confidence": "low"
+      },
+      {
+        "type": "Vulnerability",
+        "value": "CVE-2023-23397",
+        "properties": {
+          "description": "Microsoft Outlook Elevation of Privilege"
+        },
+        "context": "Vulnerability Exploited",
+        "confidence": "high"
+      },
+      {
+        "type": "Vulnerability",
+        "value": "CVE-2023-21716",
+        "properties": {
+          "description": "Microsoft Office Publisher RCE"
+        },
+        "context": "Vulnerability Exploited",
+        "confidence": "high"
+      },
+      {
+        "type": "Vulnerability",
+        "value": "CVE-2023-0669",
+        "properties": {
+          "description": "Fortra GoAnywhere MFT RCE"
+        },
+        "context": "Vulnerability Exploited",
+        "confidence": "high"
+      },
+      {
+        "type": "Vulnerability",
+        "value": "CVE-2023-28252",
+        "properties": {
+          "description": "Windows CLFS Driver EoP"
+        },
+        "context": "Vulnerability Exploited",
+        "confidence": "high"
+      }
+    ],
+    "extraction_metadata": {
+      "total_artifacts": 37,
+      "high_confidence": 36,
+      "medium_confidence": 0,
+      "low_confidence": 1
+    }
+  },
+  "reasoning_and_mapping": {
+    "reasoning_chains": [
+      {
+        "artifact_id": "IP Address: 192.168.10.50",
+        "artifact": {
+          "type": "IP Address",
+          "value": "192.168.10.50",
+          "properties": {
+            "ip_version": "IPv4"
+          },
+          "context": "Manufacturing Execution System (MES): SRV-MES-01",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This IP address is associated with a Manufacturing Execution System (MES), which is a computer system used to track and manage the production process.",
+            "conclusion": "The technical function of this artifact is to identify a specific system within the network."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The IP address could be used to gain initial access to the system or to establish persistence within the network.",
+            "conclusion": "The attack tactic supported by this artifact is Initial Access or Persistence."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Initial Access",
+          "technique": "Valid Accounts",
+          "phase": "Preparation",
+          "confidence": "high",
+          "explicit_justification": "The IP address is associated with a legitimate system, and an attacker could use valid accounts to gain initial access to the system."
+        }
+      },
+      {
+        "artifact_id": "File Hash: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0",
+        "artifact": {
+          "type": "File Hash",
+          "value": "7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0",
+          "properties": {
+            "hash_type": "SHA256"
+          },
+          "context": "Primary Payload: system_update.exe",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This file hash is associated with a primary payload, which is a malicious file used to gain access to a system or to establish persistence.",
+            "conclusion": "The technical function of this artifact is to identify a specific malicious file."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The file hash could be used to deliver a malicious payload or to establish persistence within the network.",
+            "conclusion": "The attack tactic supported by this artifact is Execution or Persistence."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Execution",
+          "technique": "Malicious File",
+          "phase": "Execution",
+          "confidence": "high",
+          "explicit_justification": "The file hash is associated with a primary payload, and an attacker could use this file to execute malicious code on the system."
+        }
+      },
+      {
+        "artifact_id": "Domain Name: secure-upload.legitimate-looking.com",
+        "artifact": {
+          "type": "Domain Name",
+          "value": "secure-upload.legitimate-looking.com",
+          "properties": {
+            "tld": ".com"
+          },
+          "context": "Command and Control Infrastructure",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This domain name is associated with command and control infrastructure, which is used to communicate with compromised systems.",
+            "conclusion": "The technical function of this artifact is to identify a specific command and control channel."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The domain name could be used to establish command and control or to exfiltrate data from the network.",
+            "conclusion": "The attack tactic supported by this artifact is Command and Control or Exfiltration."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Command and Control",
+          "technique": "Domain Name",
+          "phase": "Maintenance",
+          "confidence": "high",
+          "explicit_justification": "The domain name is associated with command and control infrastructure, and an attacker could use this domain to communicate with compromised systems."
+        }
+      },
+      {
+        "artifact_id": "Vulnerability: CVE-2023-23397",
+        "artifact": {
+          "type": "Vulnerability",
+          "value": "CVE-2023-23397",
+          "properties": {
+            "description": "Microsoft Outlook Elevation of Privilege"
+          },
+          "context": "Vulnerability Exploited",
+          "confidence": "high"
+        },
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "question": "What is this artifact's technical function?",
+            "analysis": "This vulnerability is associated with an elevation of privilege exploit, which could be used to gain higher privileges on a system.",
+            "conclusion": "The technical function of this artifact is to identify a specific vulnerability that could be exploited."
+          },
+          {
+            "step": 2,
+            "question": "What attack tactic does it support?",
+            "analysis": "The vulnerability could be used to escalate privileges or to gain access to sensitive data.",
+            "conclusion": "The attack tactic supported by this artifact is Privilege Escalation or Data Access."
+          }
+        ],
+        "final_mapping": {
+          "tactic": "Privilege Escalation",
+          "technique": "Exploitation of Vulnerability",
+          "phase": "Execution",
+          "confidence": "high",
+          "explicit_justification": "The vulnerability is associated with an elevation of privilege exploit, and an attacker could use this vulnerability to gain higher privileges on the system."
+        }
+      }
+    ],
+    "attack_timeline": [
+      {
+        "phase": "Preparation",
+        "tactic": "Initial Access",
+        "technique": "Valid Accounts",
+        "artifacts": [
+          "IP Address: 192.168.10.50"
+        ],
+        "chronological_order": 1,
+        "causal_relationships": [
+          "Initial Access leads to Execution"
+        ],
+        "phase_justification": "The attacker gains initial access to the system using valid accounts."
+      },
+      {
+        "phase": "Execution",
+        "tactic": "Execution",
+        "technique": "Malicious File",
+        "artifacts": [
+          "File Hash: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0"
+        ],
+        "chronological_order": 2,
+        "causal_relationships": [
+          "Execution leads to Persistence"
+        ],
+        "phase_justification": "The attacker executes malicious code on the system using a malicious file."
+      },
+      {
+        "phase": "Maintenance",
+        "tactic": "Command and Control",
+        "technique": "Domain Name",
+        "artifacts": [
+          "Domain Name: secure-upload.legitimate-looking.com"
+        ],
+        "chronological_order": 3,
+        "causal_relationships": [
+          "Persistence leads to Exfiltration"
+        ],
+        "phase_justification": "The attacker establishes command and control with the compromised system using a domain name."
+      },
+      {
+        "phase": "Execution",
+        "tactic": "Privilege Escalation",
+        "technique": "Exploitation of Vulnerability",
+        "artifacts": [
+          "Vulnerability: CVE-2023-23397"
+        ],
+        "chronological_order": 4,
+        "causal_relationships": [
+          "Privilege Escalation leads to Data Access"
+        ],
+        "phase_justification": "The attacker escalates privileges on the system using an exploited vulnerability."
+      }
+    ],
+    "overall_attack_narrative": "The attacker gains initial access to the system using valid accounts, executes malicious code using a malicious file, establishes command and control using a domain name, and escalates privileges using an exploited vulnerability. The attacker's goal is to gain access to sensitive data and maintain persistence within the network.",
+    "confidence_assessment": {
+      "overall_confidence": "high",
+      "reasoning_quality": "The reasoning quality is high due to the use of explicit justifications and causal relationships between phases.",
+      "mapping_validation": "The mapping validation is high due to the use of relevant artifacts and techniques to support each phase."
+    }
+  },
+  "source_file": "reports/nist_incident_response.txt",
+  "analysis_timestamp": "20251008_093056",
+  "analysis_tool": "Automated Knowledge Acquisition Layer v2.0",
+  "ontology_ready": true
+}

@@ -1,0 +1,30 @@
+AUTOMATED KNOWLEDGE ACQUISITION LAYER - ANALYSIS SUMMARY
+======================================================================
+
+Source File: reports/crowdstrike_apt_report.txt
+Analysis Date: 2025-10-08 09:29:30
+Tool: Automated Knowledge Acquisition Layer v2.0
+
+ATTACK NARRATIVE:
+------------------------------
+The attack begins with the initial access phase, where the attacker gains initial access to the system through a phishing campaign (T1566.001). The attacker then executes the primary payload (T1204), which establishes persistence on the system (T1050). The attacker then uses the persistence mechanism to maintain access to the system and move laterally within the network.
+
+CONFIDENCE ASSESSMENT:
+------------------------------
+Overall Confidence: high
+Reasoning Quality: The reasoning quality is high, as the attack timeline and artifact mappings are well-supported by the evidence.
+
+STRATEGIC ATTACK FRAMEWORK TIMELINE:
+------------------------------
+
+1. INITIAL ACCESS
+   Tactic: Initial Access
+   Technique: T1566.001
+
+2. EXECUTION
+   Tactic: Execution
+   Technique: T1204
+
+3. PERSISTENCE
+   Tactic: Persistence
+   Technique: T1050
