@@ -37,7 +37,7 @@ Cybryst Pro is an advanced AI-powered digital forensics analysis tool that addre
 
 1. **Clone the repository**
    ```bash
-   git clonehttps://github.com/Ib-uth/cybryst-pro.git
+   git clone https://github.com/Ib-uth/cybryst-pro.git
    cd cybryst-pro
    ```
 
