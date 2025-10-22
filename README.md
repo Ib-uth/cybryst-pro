@@ -1,8 +1,8 @@
-# Automated Knowledge Acquisition Layer for Digital Forensics
+# Cybryst Pro - AI-Powered Digital Forensics Analysis
 
 ## Overview
 
-This project implements the foundational Automated Knowledge Acquisition Layer for digital forensics, addressing the manual data structuring bottleneck identified in Ngo & Le-Khac (2023) and Silva et al. (2024). The system autonomously converts raw, unstructured cybersecurity incident reports into structured, ontology-ready knowledge instances using a sophisticated two-stage LLM pipeline.
+Cybryst Pro is an advanced AI-powered digital forensics analysis tool that addresses the manual data structuring bottleneck identified in Ngo & Le-Khac (2023) and Silva et al. (2024). The system autonomously converts raw, unstructured cybersecurity incident reports into structured, ontology-ready knowledge instances using a sophisticated two-stage LLM pipeline.
 
 ## Key Features
 
@@ -26,27 +26,77 @@ This project implements the foundational Automated Knowledge Acquisition Layer f
 - Uses Mixtral-8x7B-32768 for advanced reasoning capabilities
 - Generates explicit XAI justifications for every inference
 
-## Usage
+## Getting Started
 
 ### Prerequisites
-- Python 3.x
-- Groq API key (set as environment variable `GROQ_API_KEY`)
-- `groq` Python package
+- Python 3.8 or higher
+- Git
+- Groq API key (get one from [Groq Console](https://console.groq.com/))
 
-### Installation
-```bash
-pip install groq
-export GROQ_API_KEY="your_groq_api_key_here"
-```
+### Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd forensic
+   ```
+
+2. **Create a virtual environment (recommended)**
+   ```bash
+   python -m venv venv
+   
+   # On macOS/Linux:
+   source venv/bin/activate
+   
+   # On Windows:
+   venv\Scripts\activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+   Or install manually:
+   ```bash
+   pip install groq
+   ```
+
+4. **Set up your Groq API key**
+   ```bash
+   # Option 1: Export as environment variable (temporary)
+   export GROQ_API_KEY="your_groq_api_key_here"
+   
+   # Option 2: Add to your shell profile (permanent)
+   echo 'export GROQ_API_KEY="your_groq_api_key_here"' >> ~/.bashrc
+   source ~/.bashrc
+   
+   # Option 3: Create a .env file (if you add python-dotenv support)
+   echo "GROQ_API_KEY=your_groq_api_key_here" > .env
+   ```
+
+5. **Verify installation**
+   ```bash
+   python cybryst_pro.py --help
+   ```
 
 ### Running the Analysis
-```bash
-# Basic analysis
-python forensic_analyzer.py reports/sample_report.txt
 
-# Analysis with complete JSON output for ontology ingestion
-python forensic_analyzer.py reports/sample_report.txt --output-json
-```
+1. **Basic analysis with summary report**
+   ```bash
+   python cybryst_pro.py reports/sample_report.txt
+   ```
+
+2. **Complete analysis with JSON output for ontology ingestion**
+   ```bash
+   python cybryst_pro.py reports/sample_report.txt --output-json
+   ```
+
+3. **Analyze your own report**
+   ```bash
+   # Place your incident report in the reports/ folder
+   python cybryst_pro.py reports/your_report.txt --output-json
+   ```
 
 ### Output
 - **Summary Report**: Human-readable analysis summary saved to `outputs/` folder

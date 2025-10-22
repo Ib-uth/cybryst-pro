@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Automated Knowledge Acquisition Layer for Digital Forensics
+Cybryst Pro - AI-Powered Digital Forensics Analysis
 
-This module implements the foundational Automated Knowledge Acquisition Layer for digital forensics,
-addressing the manual data structuring bottleneck identified in Ngo & Le-Khac (2023) and Silva et al. (2024).
+Cybryst Pro is an advanced AI-powered digital forensics analysis tool that addresses
+the manual data structuring bottleneck identified in Ngo & Le-Khac (2023) and Silva et al. (2024).
 
 The system implements a two-stage LLM pipeline leveraging the low-latency Groq API endpoint:
 1. Artifact Extractor Module: Identifies and extracts core digital forensic data
@@ -45,7 +45,7 @@ class ArtifactExtractorModule:
     """
     Stage 1: Artifact Extractor Module
     
-    This module implements the first stage of the Automated Knowledge Acquisition Layer.
+    This module implements the first stage of Cybryst Pro's analysis pipeline.
     It reliably identifies and extracts core digital forensic data (IPs, hashes, malware, tools)
     and their properties from unstructured cybersecurity incident reports.
     """
@@ -166,7 +166,7 @@ class ReasoningAndMappingModule:
     """
     Stage 2: Reasoning and Mapping Module
     
-    This module implements the second stage of the Automated Knowledge Acquisition Layer.
+    This module implements the second stage of Cybryst Pro's analysis pipeline.
     It enforces Zero-Shot Chain-of-Thought (CoT) reasoning to dynamically map extracted
     artifacts to a strategic attack framework (Tactic/Technique/Phase proxy), establish
     causal and chronological relationships, and generate explicit natural language
@@ -464,13 +464,13 @@ Environment Variables:
         base_filename = os.path.splitext(os.path.basename(args.filepath))[0]
         
         # Save summary report
-        summary_filename = os.path.join(output_dir, f"knowledge_acquisition_summary_{base_filename}_{timestamp}.txt")
+        summary_filename = os.path.join(output_dir, f"cybryst_pro_summary_{base_filename}_{timestamp}.txt")
         with open(summary_filename, 'w', encoding='utf-8') as f:
-            f.write("AUTOMATED KNOWLEDGE ACQUISITION LAYER - ANALYSIS SUMMARY\n")
+            f.write("CYBRYST PRO - ANALYSIS SUMMARY\n")
             f.write("=" * 70 + "\n\n")
             f.write(f"Source File: {args.filepath}\n")
             f.write(f"Analysis Date: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write(f"Tool: Automated Knowledge Acquisition Layer v2.0\n\n")
+            f.write(f"Tool: Cybryst Pro v2.0\n\n")
             
             attack_narrative = reasoning_result.get('overall_attack_narrative', 'No narrative available')
             f.write("ATTACK NARRATIVE:\n")
@@ -499,14 +499,14 @@ Environment Variables:
         
         # Optional: Save complete structured JSON for ontology ingestion
         if args.output_json:
-            output_filename = os.path.join(output_dir, f"knowledge_acquisition_complete_{base_filename}_{timestamp}.json")
+            output_filename = os.path.join(output_dir, f"cybryst_pro_complete_{base_filename}_{timestamp}.json")
 
             complete_results = {
                 "artifacts": artifacts_result,
                 "reasoning_and_mapping": reasoning_result,
                 "source_file": args.filepath,
                 "analysis_timestamp": timestamp,
-                "analysis_tool": "Automated Knowledge Acquisition Layer v2.0",
+                "analysis_tool": "Cybryst Pro v2.0",
                 "ontology_ready": True
             }
 

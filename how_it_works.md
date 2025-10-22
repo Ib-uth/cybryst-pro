@@ -1,8 +1,8 @@
-# Automated Knowledge Acquisition Layer for Digital Forensics - How It Works
+# Cybryst Pro - How It Works
 
 ## Executive Summary
 
-The Automated Knowledge Acquisition Layer addresses the critical bottleneck in digital forensics identified by Ngo & Le-Khac (2023) and Silva et al. (2024) - the manual structuring of unstructured cybersecurity incident reports. This system implements a sophisticated two-stage LLM pipeline that autonomously converts raw, prose-based incident reports into structured, ontology-ready knowledge instances suitable for immediate ingestion into DFIR (Digital Forensics and Incident Response) knowledge management systems.
+Cybryst Pro addresses the critical bottleneck in digital forensics identified by Ngo & Le-Khac (2023) and Silva et al. (2024) - the manual structuring of unstructured cybersecurity incident reports. This system implements a sophisticated two-stage LLM pipeline that autonomously converts raw, prose-based incident reports into structured, ontology-ready knowledge instances suitable for immediate ingestion into DFIR (Digital Forensics and Incident Response) knowledge management systems.
 
 ## System Architecture Overview
 
@@ -310,6 +310,6 @@ This system contributes to multiple research areas:
 
 ## Conclusion
 
-The Automated Knowledge Acquisition Layer represents a significant advancement in digital forensics automation. By implementing a sophisticated two-stage LLM pipeline with Zero-Shot Chain-of-Thought reasoning and comprehensive XAI capabilities, the system successfully addresses the critical bottleneck of manual data structuring while providing transparent, validated, and ontology-ready output suitable for immediate integration into modern DFIR knowledge management systems.
+Cybryst Pro represents a significant advancement in digital forensics automation. By implementing a sophisticated two-stage LLM pipeline with Zero-Shot Chain-of-Thought reasoning and comprehensive XAI capabilities, the system successfully addresses the critical bottleneck of manual data structuring while providing transparent, validated, and ontology-ready output suitable for immediate integration into modern DFIR knowledge management systems.
 
 The system's modular architecture, low-latency performance, and comprehensive validation framework make it suitable for both research applications and production deployment in digital forensics workflows. The explicit reasoning chains and confidence assessments ensure that the automated analysis maintains the rigor and transparency required for forensic applications while dramatically reducing the manual effort required for knowledge acquisition and structuring.
