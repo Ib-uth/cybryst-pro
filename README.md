@@ -66,12 +66,15 @@ Cybryst Pro is an advanced AI-powered digital forensics analysis tool that addre
    ```bash
    # Option 1: Export as environment variable (temporary)
    export GROQ_API_KEY="your_groq_api_key_here"
+
+   #option 2 (for windows): Export as environmental variable (temporary on powershell)
+   $env:GROQ_API_KEY = "your_groq_api_key_here"
    
-   # Option 2: Add to your shell profile (permanent)
+   # Option 3: Add to your shell profile (permanent)
    echo 'export GROQ_API_KEY="your_groq_api_key_here"' >> ~/.bashrc
    source ~/.bashrc
    
-   # Option 3: Create a .env file (if you add python-dotenv support)
+   # Option 4: Create a .env file (if you add python-dotenv support)
    echo "GROQ_API_KEY=your_groq_api_key_here" > .env
    ```
 
